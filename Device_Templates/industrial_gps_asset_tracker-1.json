@@ -1,1540 +1,1542 @@
-{
+[
+  {
     "@id": "dtmi:tektelic:industrial_gps_asset_tracker;1",
     "@type": "Interface",
     "contents": [
-        {
-            "@id": "dtmi:tektelic:industrial_gps_asset_tracker:SendDownlink;1",
-            "@type": "Command",
-            "description": {
-                "en": "Send downlink to the sensor"
-            },
+      {
+        "@id": "dtmi:tektelic:industrial_gps_asset_tracker:SendDownlink;1",
+        "@type": "Command",
+        "description": {
+          "en": "Send downlink to the sensor"
+        },
+        "displayName": {
+          "en": "Send Downlink"
+        },
+        "name": "SendDownlink",
+        "request": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Payload"
+          },
+          "name": "payload",
+          "schema": {
+            "@type": "Object",
             "displayName": {
-                "en": "Send Downlink"
+              "en": "Object"
             },
-            "name": "SendDownlink",
-            "request": {
-                "@type": "CommandPayload",
+            "fields": [
+              {
                 "displayName": {
-                    "en": "Payload"
+                  "en": "Parameters"
                 },
-                "name": "payload",
-                "schema": {
-                    "@type": "Object",
-                    "displayName": {
-                        "en": "Object"
+                "name": "params",
+                "dtmi:dtdl:property:schema;2": {
+                  "@type": "Object",
+                  "displayName": {
+                    "en": "Object"
+                  },
+                  "fields": [
+                    {
+                      "displayName": {
+                        "en": "Port"
+                      },
+                      "name": "port",
+                      "schema": "integer"
                     },
-                    "fields": [
-                        {
-                            "displayName": {
-                                "en": "Parameters"
-                            },
-                            "name": "params",
-                            "dtmi:dtdl:property:schema;2": {
-                                "@type": "Object",
-                                "displayName": {
-                                    "en": "Object"
-                                },
-                                "fields": [
-                                    {
-                                        "displayName": {
-                                            "en": "Port"
-                                        },
-                                        "name": "port",
-                                        "schema": "integer"
-                                    },
-                                    {
-                                        "displayName": {
-                                            "en": "Data in Base64 format"
-                                        },
-                                        "name": "data",
-                                        "schema": "string"
-                                    }
-                                ]
-                            }
-                        }
-                    ]
+                    {
+                      "displayName": {
+                        "en": "Data in Base64 format"
+                      },
+                      "name": "data",
+                      "schema": "string"
+                    }
+                  ]
                 }
-            },
-            "durable": true
+              }
+            ]
+          }
         },
-        {
-            "@type": "Telemetry",
-            "displayName": {
-                "en": "Loramac config"
-            },
-            "name": "loramac_config",
-            "schema": {
+        "durable": true
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Loramac config"
+        },
+        "name": "loramac_config",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Loramac join mode"
+              },
+              "name": "loramac_join_mode",
+              "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
-                    {
-                        "displayName": {
-                            "en": "Loramac join mode"
-                        },
-                        "name": "loramac_join_mode",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Loramac join mode"
-                                    },
-                                    "name": "loramac_join_mode",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
+                  {
+                    "displayName": {
+                      "en": "Loramac join mode"
                     },
-                    {
-                        "displayName": {
-                            "en": "Confirm mode"
-                        },
-                        "name": "loramac_opts",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Confirm mode"
-                                    },
-                                    "name": "confirm_mode",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Sync word"
-                                    },
-                                    "name": "sync_word",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Duty cycle"
-                                    },
-                                    "name": "duty_cycle",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Adr"
-                                    },
-                                    "name": "adr",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Tx power number"
-                        },
-                        "name": "loramac_dr_tx",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Tx power number"
-                                    },
-                                    "name": "tx_power_number",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Dr number"
-                                    },
-                                    "name": "dr_number",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Dr number"
-                        },
-                        "name": "loramac_rx2",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Dr number"
-                                    },
-                                    "name": "dr_number",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Frequency"
-                                    },
-                                    "name": "frequency",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    }
+                    "name": "loramac_join_mode",
+                    "schema": "double"
+                  }
                 ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "displayName": {
-                "en": "Periodic tx config"
+              }
             },
-            "name": "periodic_tx_config",
-            "schema": {
+            {
+              "displayName": {
+                "en": "Confirm mode"
+              },
+              "name": "loramac_opts",
+              "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
-                    {
-                        "displayName": {
-                            "en": "Seconds per core tick"
-                        },
-                        "name": "seconds_per_core_tick",
-                        "schema": "double"
+                  {
+                    "displayName": {
+                      "en": "Confirm mode"
                     },
-                    {
-                        "displayName": {
-                            "en": "Ticks per battery"
-                        },
-                        "name": "ticks_per_battery",
-                        "schema": "double"
+                    "name": "confirm_mode",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Sync word"
                     },
-                    {
-                        "displayName": {
-                            "en": "Ticks per gnss stillness"
-                        },
-                        "name": "ticks_per_gnss_stillness",
-                        "schema": "double"
+                    "name": "sync_word",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Duty cycle"
                     },
-                    {
-                        "displayName": {
-                            "en": "Ticks per gnss mobility"
-                        },
-                        "name": "ticks_per_gnss_mobility",
-                        "schema": "double"
+                    "name": "duty_cycle",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Adr"
                     },
-                    {
-                        "displayName": {
-                            "en": "Ticks per accelerometer"
-                        },
-                        "name": "ticks_per_accelerometer",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Ticks per ble default"
-                        },
-                        "name": "ticks_per_ble_default",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Ticks per ble stillness"
-                        },
-                        "name": "ticks_per_ble_stillness",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Ticks per ble mobility"
-                        },
-                        "name": "ticks_per_ble_mobility",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Ticks per temperature"
-                        },
-                        "name": "ticks_per_temperature",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Ticks per fsm state"
-                        },
-                        "name": "ticks_per_fsm_state",
-                        "schema": "double"
-                    }
+                    "name": "adr",
+                    "schema": "double"
+                  }
                 ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "displayName": {
-                "en": "Reed switch config"
+              }
             },
-            "name": "reed_switch_config",
-            "schema": {
+            {
+              "displayName": {
+                "en": "Tx power number"
+              },
+              "name": "loramac_dr_tx",
+              "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
-                    {
-                        "displayName": {
-                            "en": "Battery"
-                        },
-                        "name": "reed_switch_tx",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Battery"
-                                    },
-                                    "name": "battery",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Acceleration vector"
-                                    },
-                                    "name": "acceleration_vector",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Temperature"
-                                    },
-                                    "name": "temperature",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Ble"
-                                    },
-                                    "name": "ble",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Gnss log"
-                                    },
-                                    "name": "gnss_log",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Fsm state"
-                                    },
-                                    "name": "fsm_state",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    }
+                  {
+                    "displayName": {
+                      "en": "Tx power number"
+                    },
+                    "name": "tx_power_number",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Dr number"
+                    },
+                    "name": "dr_number",
+                    "schema": "double"
+                  }
                 ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "displayName": {
-                "en": "Gnss rx config"
+              }
             },
-            "name": "gnss_rx_config",
-            "schema": {
+            {
+              "displayName": {
+                "en": "Dr number"
+              },
+              "name": "loramac_rx2",
+              "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
-                    {
-                        "displayName": {
-                            "en": "Gnss enabled"
-                        },
-                        "name": "gnss_enabled",
-                        "schema": "double"
+                  {
+                    "displayName": {
+                      "en": "Dr number"
                     },
-                    {
-                        "displayName": {
-                            "en": "Stillness"
-                        },
-                        "name": "speed_threshold",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Stillness"
-                                    },
-                                    "name": "stillness",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Mobility"
-                                    },
-                                    "name": "mobility",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
+                    "name": "dr_number",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Frequency"
                     },
-                    {
-                        "displayName": {
-                            "en": "Utc"
-                        },
-                        "name": "gnss_tx",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Utc"
-                                    },
-                                    "name": "utc",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Coordinates"
-                                    },
-                                    "name": "coordinates",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Ground speed"
-                                    },
-                                    "name": "ground_speed",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Geofence"
-                                    },
-                                    "name": "geofence",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Radius"
-                        },
-                        "name": "geofence0",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Radius"
-                                    },
-                                    "name": "radius",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Longitude"
-                                    },
-                                    "name": "longitude",
-                                    "schema": "long"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Latitude"
-                                    },
-                                    "name": "latitude",
-                                    "schema": "long"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Radius"
-                        },
-                        "name": "geofence1",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Radius"
-                                    },
-                                    "name": "radius",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Longitude"
-                                    },
-                                    "name": "longitude",
-                                    "schema": "long"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Latitude"
-                                    },
-                                    "name": "latitude",
-                                    "schema": "long"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Radius"
-                        },
-                        "name": "geofence2",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Radius"
-                                    },
-                                    "name": "radius",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Longitude"
-                                    },
-                                    "name": "longitude",
-                                    "schema": "long"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Latitude"
-                                    },
-                                    "name": "latitude",
-                                    "schema": "long"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Radius"
-                        },
-                        "name": "geofence3",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Radius"
-                                    },
-                                    "name": "radius",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Longitude"
-                                    },
-                                    "name": "longitude",
-                                    "schema": "long"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Latitude"
-                                    },
-                                    "name": "latitude",
-                                    "schema": "long"
-                                }
-                            ]
-                        }
-                    }
+                    "name": "frequency",
+                    "schema": "double"
+                  }
                 ]
+              }
             }
-        },
-        {
-            "@type": "Telemetry",
-            "displayName": {
-                "en": "Accelerometer config"
-            },
-            "name": "accelerometer_config",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "displayName": {
-                            "en": "Xaxis enabled"
-                        },
-                        "name": "accelerometer_mode",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Xaxis enabled"
-                                    },
-                                    "name": "xaxis_enabled",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Yaxis enabled"
-                                    },
-                                    "name": "yaxis_enabled",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Zaxis enabled"
-                                    },
-                                    "name": "zaxis_enabled",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Assist enabled"
-                                    },
-                                    "name": "assist_enabled",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Poweron"
-                                    },
-                                    "name": "poweron",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Sample rate"
-                        },
-                        "name": "accelerometer_sensitivity",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Sample rate"
-                                    },
-                                    "name": "sample_rate",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Measurement range"
-                                    },
-                                    "name": "measurement_range",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Acceleration alarm threshold count"
-                        },
-                        "name": "acceleration_alarm_threshold_count",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Acceleration alarm threshold period"
-                        },
-                        "name": "acceleration_alarm_threshold_period",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Acceleration alarm threshold"
-                        },
-                        "name": "acceleration_alarm_threshold",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Acceleration alarm grace period"
-                        },
-                        "name": "acceleration_alarm_grace_period",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Acceleration alarm enabled"
-                        },
-                        "name": "acceleration_alarm_enabled",
-                        "schema": "double"
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "displayName": {
-                "en": "Ble config"
-            },
-            "name": "ble_config",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "displayName": {
-                            "en": "Num reported devices"
-                        },
-                        "name": "ble_mode",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Num reported devices"
-                                    },
-                                    "name": "num_reported_devices",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Repitition enabled"
-                                    },
-                                    "name": "repitition_enabled",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Periodic"
-                        },
-                        "name": "ble_scan_duration",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Periodic"
-                                    },
-                                    "name": "periodic",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Event based"
-                                    },
-                                    "name": "event_based",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Ble scan interval"
-                        },
-                        "name": "ble_scan_interval",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Ble scan window"
-                        },
-                        "name": "ble_scan_window",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Lap end"
-                        },
-                        "name": "bd_addr_range0",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Lap end"
-                                    },
-                                    "name": "lap_end",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Lap start"
-                                    },
-                                    "name": "lap_start",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Oui"
-                                    },
-                                    "name": "oui",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Lap end"
-                        },
-                        "name": "bd_addr_range1",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Lap end"
-                                    },
-                                    "name": "lap_end",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Lap start"
-                                    },
-                                    "name": "lap_start",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Oui"
-                                    },
-                                    "name": "oui",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Lap end"
-                        },
-                        "name": "bd_addr_range2",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Lap end"
-                                    },
-                                    "name": "lap_end",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Lap start"
-                                    },
-                                    "name": "lap_start",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Oui"
-                                    },
-                                    "name": "oui",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Lap end"
-                        },
-                        "name": "bd_addr_range3",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Lap end"
-                                    },
-                                    "name": "lap_end",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Lap start"
-                                    },
-                                    "name": "lap_start",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Oui"
-                                    },
-                                    "name": "oui",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "displayName": {
-                "en": "Temp threshold config"
-            },
-            "name": "temp_threshold_config",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "displayName": {
-                            "en": "Temperature sample period idle"
-                        },
-                        "name": "temperature_sample_period_idle",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Temperature sample period active"
-                        },
-                        "name": "temperature_sample_period_active",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Low"
-                        },
-                        "name": "temperature_thresholds",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Low"
-                                    },
-                                    "name": "low",
-                                    "schema": "long"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "High"
-                                    },
-                                    "name": "high",
-                                    "schema": "long"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Temperature thresholds enabled"
-                        },
-                        "name": "temperature_thresholds_enabled",
-                        "schema": "double"
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "displayName": {
-                "en": "Cmd ctrl"
-            },
-            "name": "cmd_ctrl",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "displayName": {
-                            "en": "Restart sensor"
-                        },
-                        "name": "write_to_flash",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Restart sensor"
-                                    },
-                                    "name": "restart_sensor",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "App config"
-                                    },
-                                    "name": "app_config",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Lora config"
-                                    },
-                                    "name": "lora_config",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Loramac region"
-                        },
-                        "name": "metadata",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Loramac region"
-                                    },
-                                    "name": "loramac_region",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Loramac ver revision"
-                                    },
-                                    "name": "loramac_ver_revision",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Loramac ver minor"
-                                    },
-                                    "name": "loramac_ver_minor",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Loramac ver major"
-                                    },
-                                    "name": "loramac_ver_major",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "App ver revision"
-                                    },
-                                    "name": "app_ver_revision",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "App ver minor"
-                                    },
-                                    "name": "app_ver_minor",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "App ver major"
-                                    },
-                                    "name": "app_ver_major",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "App config"
-                        },
-                        "name": "config_factory_reset",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "App config"
-                                    },
-                                    "name": "app_config",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Loramac config"
-                                    },
-                                    "name": "loramac_config",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "displayName": {
-                "en": "Sensor data"
-            },
-            "name": "sensor_data",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "displayName": {
-                            "en": "Voltage"
-                        },
-                        "name": "battery1_status",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Voltage"
-                                    },
-                                    "name": "voltage",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Eos alert"
-                                    },
-                                    "name": "eos_alert",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Voltage"
-                        },
-                        "name": "battery2_status",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Voltage"
-                                    },
-                                    "name": "voltage",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Eos alert"
-                                    },
-                                    "name": "eos_alert",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Second"
-                        },
-                        "name": "utc",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Second"
-                                    },
-                                    "name": "second",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Minute"
-                                    },
-                                    "name": "minute",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Hour"
-                                    },
-                                    "name": "hour",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Day"
-                                    },
-                                    "name": "day",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Month"
-                                    },
-                                    "name": "month",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Year"
-                                    },
-                                    "name": "year",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Altitude"
-                        },
-                        "name": "coordinates",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Altitude"
-                                    },
-                                    "name": "altitude",
-                                    "schema": "long"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Longitude"
-                                    },
-                                    "name": "longitude",
-                                    "schema": "long"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Latitude"
-                                    },
-                                    "name": "latitude",
-                                    "schema": "long"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Ground speed"
-                        },
-                        "name": "ground_speed",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Fsm state"
-                        },
-                        "name": "fsm_state",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Utc"
-                        },
-                        "name": "fix_status",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Utc"
-                                    },
-                                    "name": "utc",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Position"
-                                    },
-                                    "name": "position",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Num0"
-                        },
-                        "name": "geofence_status",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Num0"
-                                    },
-                                    "name": "num0",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Num1"
-                                    },
-                                    "name": "num1",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Num2"
-                                    },
-                                    "name": "num2",
-                                    "schema": "double"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Num3"
-                                    },
-                                    "name": "num3",
-                                    "schema": "double"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Acceleration alarm"
-                        },
-                        "name": "acceleration_alarm",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Xaxis"
-                        },
-                        "name": "acceleration_vector",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Object",
-                            "fields": [
-                                {
-                                    "displayName": {
-                                        "en": "Xaxis"
-                                    },
-                                    "name": "xaxis",
-                                    "schema": "long"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Yaxis"
-                                    },
-                                    "name": "yaxis",
-                                    "schema": "long"
-                                },
-                                {
-                                    "displayName": {
-                                        "en": "Zaxis"
-                                    },
-                                    "name": "zaxis",
-                                    "schema": "long"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Temperature"
-                        },
-                        "name": "temperature",
-                        "schema": "long"
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "displayName": {
-                "en": "Log utc"
-            },
-            "name": "log_utc",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "displayName": {
-                            "en": "Fragment number"
-                        },
-                        "name": "fragment_number",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Year"
-                        },
-                        "name": "year",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Month"
-                        },
-                        "name": "month",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Day"
-                        },
-                        "name": "day",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Hour"
-                        },
-                        "name": "hour",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Minute"
-                        },
-                        "name": "minute",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Second"
-                        },
-                        "name": "second",
-                        "schema": "double"
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "displayName": {
-                "en": "Log coordinates"
-            },
-            "name": "log_coordinates",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "displayName": {
-                            "en": "Fragment number"
-                        },
-                        "name": "fragment_number",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Lattitude"
-                        },
-                        "name": "lattitude",
-                        "schema": "long"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Longitude"
-                        },
-                        "name": "longitude",
-                        "schema": "long"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Altitude"
-                        },
-                        "name": "altitude",
-                        "schema": "long"
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "displayName": {
-                "en": "Log all"
-            },
-            "name": "log_all",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "displayName": {
-                            "en": "Fragment number"
-                        },
-                        "name": "fragment_number",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Year"
-                        },
-                        "name": "year",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Month"
-                        },
-                        "name": "month",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Day"
-                        },
-                        "name": "day",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Hour"
-                        },
-                        "name": "hour",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Minute"
-                        },
-                        "name": "minute",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Second"
-                        },
-                        "name": "second",
-                        "schema": "double"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Lattitude"
-                        },
-                        "name": "lattitude",
-                        "schema": "long"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Longitude"
-                        },
-                        "name": "longitude",
-                        "schema": "long"
-                    },
-                    {
-                        "displayName": {
-                            "en": "Altitude"
-                        },
-                        "name": "altitude",
-                        "schema": "long"
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "Telemetry",
-            "displayName": {
-                "en": "Devices"
-            },
-            "name": "devices",
-            "schema": {
-                "@type": "Object",
-                "fields": [
-                    {
-                        "displayName": {
-                            "en": "Id"
-                        },
-                        "name": "id",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Array",
-                            "elementSchema": "string"
-                        }
-                    },
-                    {
-                        "displayName": {
-                            "en": "Rssi"
-                        },
-                        "name": "rssi",
-                        "dtmi:dtdl:property:schema;2": {
-                            "@type": "Array",
-                            "elementSchema": "long"
-                        }
-                    }
-                ]
-            }
+          ]
         }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Periodic tx config"
+        },
+        "name": "periodic_tx_config",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Seconds per core tick"
+              },
+              "name": "seconds_per_core_tick",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Ticks per battery"
+              },
+              "name": "ticks_per_battery",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Ticks per gnss stillness"
+              },
+              "name": "ticks_per_gnss_stillness",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Ticks per gnss mobility"
+              },
+              "name": "ticks_per_gnss_mobility",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Ticks per accelerometer"
+              },
+              "name": "ticks_per_accelerometer",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Ticks per ble default"
+              },
+              "name": "ticks_per_ble_default",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Ticks per ble stillness"
+              },
+              "name": "ticks_per_ble_stillness",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Ticks per ble mobility"
+              },
+              "name": "ticks_per_ble_mobility",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Ticks per temperature"
+              },
+              "name": "ticks_per_temperature",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Ticks per fsm state"
+              },
+              "name": "ticks_per_fsm_state",
+              "schema": "double"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Reed switch config"
+        },
+        "name": "reed_switch_config",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Battery"
+              },
+              "name": "reed_switch_tx",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Battery"
+                    },
+                    "name": "battery",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Acceleration vector"
+                    },
+                    "name": "acceleration_vector",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Temperature"
+                    },
+                    "name": "temperature",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Ble"
+                    },
+                    "name": "ble",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Gnss log"
+                    },
+                    "name": "gnss_log",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Fsm state"
+                    },
+                    "name": "fsm_state",
+                    "schema": "double"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Gnss rx config"
+        },
+        "name": "gnss_rx_config",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Gnss enabled"
+              },
+              "name": "gnss_enabled",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Stillness"
+              },
+              "name": "speed_threshold",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Stillness"
+                    },
+                    "name": "stillness",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Mobility"
+                    },
+                    "name": "mobility",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Utc"
+              },
+              "name": "gnss_tx",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Utc"
+                    },
+                    "name": "utc",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Coordinates"
+                    },
+                    "name": "coordinates",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Ground speed"
+                    },
+                    "name": "ground_speed",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Geofence"
+                    },
+                    "name": "geofence",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Radius"
+              },
+              "name": "geofence0",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Radius"
+                    },
+                    "name": "radius",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Longitude"
+                    },
+                    "name": "longitude",
+                    "schema": "long"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Latitude"
+                    },
+                    "name": "latitude",
+                    "schema": "long"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Radius"
+              },
+              "name": "geofence1",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Radius"
+                    },
+                    "name": "radius",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Longitude"
+                    },
+                    "name": "longitude",
+                    "schema": "long"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Latitude"
+                    },
+                    "name": "latitude",
+                    "schema": "long"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Radius"
+              },
+              "name": "geofence2",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Radius"
+                    },
+                    "name": "radius",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Longitude"
+                    },
+                    "name": "longitude",
+                    "schema": "long"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Latitude"
+                    },
+                    "name": "latitude",
+                    "schema": "long"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Radius"
+              },
+              "name": "geofence3",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Radius"
+                    },
+                    "name": "radius",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Longitude"
+                    },
+                    "name": "longitude",
+                    "schema": "long"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Latitude"
+                    },
+                    "name": "latitude",
+                    "schema": "long"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Accelerometer config"
+        },
+        "name": "accelerometer_config",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Xaxis enabled"
+              },
+              "name": "accelerometer_mode",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Xaxis enabled"
+                    },
+                    "name": "xaxis_enabled",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Yaxis enabled"
+                    },
+                    "name": "yaxis_enabled",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Zaxis enabled"
+                    },
+                    "name": "zaxis_enabled",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Assist enabled"
+                    },
+                    "name": "assist_enabled",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Poweron"
+                    },
+                    "name": "poweron",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Sample rate"
+              },
+              "name": "accelerometer_sensitivity",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Sample rate"
+                    },
+                    "name": "sample_rate",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Measurement range"
+                    },
+                    "name": "measurement_range",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Acceleration alarm threshold count"
+              },
+              "name": "acceleration_alarm_threshold_count",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Acceleration alarm threshold period"
+              },
+              "name": "acceleration_alarm_threshold_period",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Acceleration alarm threshold"
+              },
+              "name": "acceleration_alarm_threshold",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Acceleration alarm grace period"
+              },
+              "name": "acceleration_alarm_grace_period",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Acceleration alarm enabled"
+              },
+              "name": "acceleration_alarm_enabled",
+              "schema": "double"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Ble config"
+        },
+        "name": "ble_config",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Num reported devices"
+              },
+              "name": "ble_mode",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Num reported devices"
+                    },
+                    "name": "num_reported_devices",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Repitition enabled"
+                    },
+                    "name": "repitition_enabled",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Periodic"
+              },
+              "name": "ble_scan_duration",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Periodic"
+                    },
+                    "name": "periodic",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Event based"
+                    },
+                    "name": "event_based",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Ble scan interval"
+              },
+              "name": "ble_scan_interval",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Ble scan window"
+              },
+              "name": "ble_scan_window",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Lap end"
+              },
+              "name": "bd_addr_range0",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Lap end"
+                    },
+                    "name": "lap_end",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Lap start"
+                    },
+                    "name": "lap_start",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Oui"
+                    },
+                    "name": "oui",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Lap end"
+              },
+              "name": "bd_addr_range1",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Lap end"
+                    },
+                    "name": "lap_end",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Lap start"
+                    },
+                    "name": "lap_start",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Oui"
+                    },
+                    "name": "oui",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Lap end"
+              },
+              "name": "bd_addr_range2",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Lap end"
+                    },
+                    "name": "lap_end",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Lap start"
+                    },
+                    "name": "lap_start",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Oui"
+                    },
+                    "name": "oui",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Lap end"
+              },
+              "name": "bd_addr_range3",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Lap end"
+                    },
+                    "name": "lap_end",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Lap start"
+                    },
+                    "name": "lap_start",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Oui"
+                    },
+                    "name": "oui",
+                    "schema": "double"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Temp threshold config"
+        },
+        "name": "temp_threshold_config",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Temperature sample period idle"
+              },
+              "name": "temperature_sample_period_idle",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Temperature sample period active"
+              },
+              "name": "temperature_sample_period_active",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Low"
+              },
+              "name": "temperature_thresholds",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Low"
+                    },
+                    "name": "low",
+                    "schema": "long"
+                  },
+                  {
+                    "displayName": {
+                      "en": "High"
+                    },
+                    "name": "high",
+                    "schema": "long"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Temperature thresholds enabled"
+              },
+              "name": "temperature_thresholds_enabled",
+              "schema": "double"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Cmd ctrl"
+        },
+        "name": "cmd_ctrl",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Restart sensor"
+              },
+              "name": "write_to_flash",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Restart sensor"
+                    },
+                    "name": "restart_sensor",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "App config"
+                    },
+                    "name": "app_config",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Lora config"
+                    },
+                    "name": "lora_config",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Loramac region"
+              },
+              "name": "metadata",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Loramac region"
+                    },
+                    "name": "loramac_region",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Loramac ver revision"
+                    },
+                    "name": "loramac_ver_revision",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Loramac ver minor"
+                    },
+                    "name": "loramac_ver_minor",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Loramac ver major"
+                    },
+                    "name": "loramac_ver_major",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "App ver revision"
+                    },
+                    "name": "app_ver_revision",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "App ver minor"
+                    },
+                    "name": "app_ver_minor",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "App ver major"
+                    },
+                    "name": "app_ver_major",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "App config"
+              },
+              "name": "config_factory_reset",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "App config"
+                    },
+                    "name": "app_config",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Loramac config"
+                    },
+                    "name": "loramac_config",
+                    "schema": "double"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Sensor data"
+        },
+        "name": "sensor_data",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Voltage"
+              },
+              "name": "battery1_status",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Voltage"
+                    },
+                    "name": "voltage",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Eos alert"
+                    },
+                    "name": "eos_alert",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Voltage"
+              },
+              "name": "battery2_status",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Voltage"
+                    },
+                    "name": "voltage",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Eos alert"
+                    },
+                    "name": "eos_alert",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Second"
+              },
+              "name": "utc",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Second"
+                    },
+                    "name": "second",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Minute"
+                    },
+                    "name": "minute",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Hour"
+                    },
+                    "name": "hour",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Day"
+                    },
+                    "name": "day",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Month"
+                    },
+                    "name": "month",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Year"
+                    },
+                    "name": "year",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Altitude"
+              },
+              "name": "coordinates",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Altitude"
+                    },
+                    "name": "altitude",
+                    "schema": "long"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Longitude"
+                    },
+                    "name": "longitude",
+                    "schema": "long"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Latitude"
+                    },
+                    "name": "latitude",
+                    "schema": "long"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Ground speed"
+              },
+              "name": "ground_speed",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Fsm state"
+              },
+              "name": "fsm_state",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Utc"
+              },
+              "name": "fix_status",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Utc"
+                    },
+                    "name": "utc",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Position"
+                    },
+                    "name": "position",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Num0"
+              },
+              "name": "geofence_status",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Num0"
+                    },
+                    "name": "num0",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Num1"
+                    },
+                    "name": "num1",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Num2"
+                    },
+                    "name": "num2",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Num3"
+                    },
+                    "name": "num3",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Acceleration alarm"
+              },
+              "name": "acceleration_alarm",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Xaxis"
+              },
+              "name": "acceleration_vector",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Xaxis"
+                    },
+                    "name": "xaxis",
+                    "schema": "long"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Yaxis"
+                    },
+                    "name": "yaxis",
+                    "schema": "long"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Zaxis"
+                    },
+                    "name": "zaxis",
+                    "schema": "long"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Temperature"
+              },
+              "name": "temperature",
+              "schema": "long"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Log utc"
+        },
+        "name": "log_utc",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Fragment number"
+              },
+              "name": "fragment_number",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Year"
+              },
+              "name": "year",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Month"
+              },
+              "name": "month",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Day"
+              },
+              "name": "day",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Hour"
+              },
+              "name": "hour",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Minute"
+              },
+              "name": "minute",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Second"
+              },
+              "name": "second",
+              "schema": "double"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Log coordinates"
+        },
+        "name": "log_coordinates",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Fragment number"
+              },
+              "name": "fragment_number",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Lattitude"
+              },
+              "name": "lattitude",
+              "schema": "long"
+            },
+            {
+              "displayName": {
+                "en": "Longitude"
+              },
+              "name": "longitude",
+              "schema": "long"
+            },
+            {
+              "displayName": {
+                "en": "Altitude"
+              },
+              "name": "altitude",
+              "schema": "long"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Log all"
+        },
+        "name": "log_all",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Fragment number"
+              },
+              "name": "fragment_number",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Year"
+              },
+              "name": "year",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Month"
+              },
+              "name": "month",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Day"
+              },
+              "name": "day",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Hour"
+              },
+              "name": "hour",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Minute"
+              },
+              "name": "minute",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Second"
+              },
+              "name": "second",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Lattitude"
+              },
+              "name": "lattitude",
+              "schema": "long"
+            },
+            {
+              "displayName": {
+                "en": "Longitude"
+              },
+              "name": "longitude",
+              "schema": "long"
+            },
+            {
+              "displayName": {
+                "en": "Altitude"
+              },
+              "name": "altitude",
+              "schema": "long"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Devices"
+        },
+        "name": "devices",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Id"
+              },
+              "name": "id",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Array",
+                "elementSchema": "string"
+              }
+            },
+            {
+              "displayName": {
+                "en": "Rssi"
+              },
+              "name": "rssi",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Array",
+                "elementSchema": "long"
+              }
+            }
+          ]
+        }
+      }
     ],
     "displayName": {
-        "en": "Industrial Gps Asset Tracker"
+      "en": "Industrial Gps Asset Tracker"
     },
     "@context": [
-        "dtmi:iotcentral:context;2",
-        "dtmi:dtdl:context;2"
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
     ]
-}
+  }
+]
