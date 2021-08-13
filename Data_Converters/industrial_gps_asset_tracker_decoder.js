@@ -2216,57 +2216,12 @@ function decode(parameters, bytes, port, flat){
     decodedData.raw = stringifyBytes(bytes);
     decodedData.port = port;
 
-    // uncomment below for 1-wire solution
-
-    /*if (port === "20") {
-        if (bytes.length <= 1)
+    if(port === "100" && bytes.length === 4) {
+        if(checkForCRC(bytes)) {
+            decodedData.message = "Downlink received";
             return decodedData;
-        var buff = bytes.slice(1, -2)
-        var crc_calculated = crc16(buff)
-        var crc_le = [crc_calculated & 0xFF, crc_calculated >> 8 & 0xFF] // little endian CRC - the moodbus way
-        var crc_received = [bytes[bytes.length-2], bytes[bytes.length-1]]
-        console.log(crc_received)
-        bytes = bytes.slice(0, -2)
-
-        decodedData.crc_ok = crc_received[0] === crc_le[0] && crc_received[1] === crc_le[1];
-        decodedData.crc = stringifyBytes(crc_received)
-    }
-
-    if (port == "11") {
-        let data_types=["harness_0_periodic", "harness_1_periodic", "harness_0_threshold", "harness_1_threshold"]
-        properties = parameters["11"]["none"]
-        while(bytes.length > 0) {
-            let data_type = bytesToValue(extractBytes(bytes.slice(0,2), 15,12), "unsigned", 1, 0, 0)
-            decodedData[data_types[data_type]] = {}
-            let bitmask = bytesToValue(extractBytes(bytes.slice(0,2), 9, 0), "unsigned", 1, 0, 0)
-            bytes = bytes.slice(2)
-            if (bytes.length === 0)
-                return decodedData
-
-            let str_bitmask = bitmask.toString(2)
-            let arr_bitmask = [...str_bitmask].map((el)=>parseInt(el))
-
-            for (var i = 0; i < arr_bitmask.length; i++) {
-                if (arr_bitmask[i] === 1) {
-                    let valueArray = bytes.slice(0, 2)
-                    bytes = bytes.length === 2 ? [] : bytes.slice(2)
-                    decodedData[data_types[data_type]]["thermometer_"+(arr_bitmask.length-1-i)] = {
-                        temperature:
-                            (bytesToValue(extractBytes(valueArray, 10, 10),
-                                "unsigned", 1,0, 0) ? -1 : 1 )
-                            *
-                            bytesToValue(extractBytes(valueArray, 9, 0),
-                                "unsigned", 0.0625, 2, 0),
-
-                        alarm: bytesToValue(extractBytes(valueArray, 15, 15),
-                            "unsigned", 1,0, 0)
-                    }
-                }
-            }
         }
-
-        return decodedData;
-    }*/
+    }
 
     if (port === "32") {
         decodedData.fragment_number = bytesToValue(extractBytes(bytes.slice(0,2), 15, 0), "unsigned", 1, 0, 0)
@@ -2490,7 +2445,37 @@ function stringifyBytes(bytes){
     return stringBytes
 }
 
+function checkForCRC(bytes) {
+    var hexArray = [];
+
+    for(i in bytes) {
+        hexArray[i] = stringifyHex(bytes[i].toString(16).toUpperCase());
+    }
+    if(sensor["100"].hasOwnProperty(hexArray[0])) {
+        dataSize = sensor["100"][hexArray[0]][0]["data_size"];
+
+        if(dataSize == 3) {
+            return false;
+        }
+        else if(dataSize == 1 && sensor["100"].hasOwnProperty(hexArray[2]) && sensor["100"][hexArray[2]][0]["data_size"] == 1) {
+            return false;
+        }
+    }
+    return true;
+}
+
 var decoded = decode(sensor, bytes, port, false);
+
+if(decoded.hasOwnProperty("error") && bytes.length > 4) {
+    if(checkForCRC(bytes)) {
+        var tmp = decoded;
+        for(i = 0; i < 4; i++) {
+            bytes.shift();
+        }
+        decoded = decode(sensor, bytes, port, false);
+        decoded.raw = tmp.raw;
+    }
+}
 
 for(i in decoded) {
     if(i != "raw" && i != "port") {
@@ -2498,5 +2483,5 @@ for(i in decoded) {
       decoded[i] = JSON.stringify(tmp);
     }
 }
-  
+
 return decoded;
