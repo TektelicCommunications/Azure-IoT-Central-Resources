@@ -1,0 +1,1660 @@
+[
+  {
+    "@id": "dtmi:tektelic:smart_room_sensor_gen3;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:tektelic:smart_room_sensor_gen3:SendDownlink;1",
+        "@type": "Command",
+        "description": {
+          "en": "Send downlink to the sensor"
+        },
+        "displayName": {
+          "en": "Send Downlink"
+        },
+        "name": "SendDownlink",
+        "request": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Payload"
+          },
+          "name": "payload",
+          "schema": {
+            "@type": "Object",
+            "displayName": {
+              "en": "Object"
+            },
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Parameters"
+                },
+                "name": "params",
+                "dtmi:dtdl:property:schema;2": {
+                  "@type": "Object",
+                  "displayName": {
+                    "en": "Object"
+                  },
+                  "fields": [
+                    {
+                      "displayName": {
+                        "en": "Port"
+                      },
+                      "name": "port",
+                      "schema": "integer"
+                    },
+                    {
+                      "displayName": {
+                        "en": "Data in Base64 Format"
+                      },
+                      "name": "data",
+                      "schema": "string"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "durable": true
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Lorawan"
+        },
+        "name": "lorawan",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Device eui"
+              },
+              "name": "device_eui",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "App eui"
+              },
+              "name": "app_eui",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "App key"
+              },
+              "name": "app_key",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "Device address"
+              },
+              "name": "device_address",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "Network session key"
+              },
+              "name": "network_session_key",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "App session key"
+              },
+              "name": "app_session_key",
+              "schema": "string"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Loramac"
+        },
+        "name": "loramac",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Join mode"
+              },
+              "name": "join_mode",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Adr"
+              },
+              "name": "loramac_opts",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Adr"
+                    },
+                    "name": "adr",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Duty cycle"
+                    },
+                    "name": "duty_cycle",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Sync word"
+                    },
+                    "name": "sync_word",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Confirm mode"
+                    },
+                    "name": "confirm_mode",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Dr number"
+              },
+              "name": "loramac_dr_tx",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Dr number"
+                    },
+                    "name": "dr_number",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Tx power"
+                    },
+                    "name": "tx_power",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Frequency"
+              },
+              "name": "loramac_rx2",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Frequency"
+                    },
+                    "name": "frequency",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Dr number"
+                    },
+                    "name": "dr_number",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Loramac net id msb"
+              },
+              "name": "loramac_net_id_msb",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Loramac net id lsb"
+              },
+              "name": "loramac_net_id_lsb",
+              "schema": "double"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Ticks"
+        },
+        "name": "ticks",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Core"
+              },
+              "name": "core",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Per battery"
+              },
+              "name": "per_battery",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Per temperature"
+              },
+              "name": "per_temperature",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Per relative humidity"
+              },
+              "name": "per_relative_humidity",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Per digital input"
+              },
+              "name": "per_digital_input",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Per light"
+              },
+              "name": "per_light",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Per acceleration"
+              },
+              "name": "per_acceleration",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Per mcu temperature"
+              },
+              "name": "per_mcu_temperature",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Per pir"
+              },
+              "name": "per_pir",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Per external connector"
+              },
+              "name": "per_external_connector",
+              "schema": "double"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Reed switch"
+        },
+        "name": "reed_switch",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Rising edge"
+              },
+              "name": "mode",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Rising edge"
+                    },
+                    "name": "rising_edge",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Falling edge"
+                    },
+                    "name": "falling_edge",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Count threshold"
+              },
+              "name": "count_threshold",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Report state"
+              },
+              "name": "values_to_transmit",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Report state"
+                    },
+                    "name": "report_state",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Report count"
+                    },
+                    "name": "report_count",
+                    "schema": "double"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "External connector"
+        },
+        "name": "external_connector",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Rising edge"
+              },
+              "name": "mode",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Rising edge"
+                    },
+                    "name": "rising_edge",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Falling edge"
+                    },
+                    "name": "falling_edge",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Analog"
+                    },
+                    "name": "analog",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Count threshold"
+              },
+              "name": "count_threshold",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "State"
+              },
+              "name": "values_to_transmit",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "State"
+                    },
+                    "name": "state",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Count"
+                    },
+                    "name": "count",
+                    "schema": "double"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Accelerometer"
+        },
+        "name": "accelerometer",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Impact alarm threshold"
+              },
+              "name": "impact_alarm_threshold",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Acceleration event threshold"
+              },
+              "name": "acceleration_event_threshold",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Impact alarm"
+              },
+              "name": "values_to_transmit",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Impact alarm"
+                    },
+                    "name": "impact_alarm",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Magnitude"
+                    },
+                    "name": "magnitude",
+                    "dtmi:dtdl:property:schema;2": {
+                      "@type": "Array",
+                      "elementSchema": "double"
+                    }
+                  },
+                  {
+                    "displayName": {
+                      "en": "Vector"
+                    },
+                    "name": "vector",
+                    "dtmi:dtdl:property:schema;2": {
+                      "@type": "Array",
+                      "elementSchema": "double"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Impact grace period"
+              },
+              "name": "debounce_time",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Impact grace period"
+                    },
+                    "name": "impact_grace_period",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Impact alarm threshold enable"
+              },
+              "name": "mode",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Impact alarm threshold enable"
+                    },
+                    "name": "impact_alarm_threshold_enable",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Event threshold enable"
+                    },
+                    "name": "event_threshold_enable",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "X axis"
+                    },
+                    "name": "x_axis",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Y axis"
+                    },
+                    "name": "y_axis",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Z axis"
+                    },
+                    "name": "z_axis",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Power"
+                    },
+                    "name": "power",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Sample rate"
+              },
+              "name": "sensitivity",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Sample rate"
+                    },
+                    "name": "sample_rate",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Alarm grace period"
+              },
+              "name": "alarm_grace_period",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Alarm event count"
+              },
+              "name": "alarm_event_count",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Alarm threshold period"
+              },
+              "name": "alarm_threshold_period",
+              "schema": "double"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Temperature humidity analogIn"
+        },
+        "name": "temperature_humidity_analogIn",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Temp_rh sample period idle"
+              },
+              "name": "ambient_temp_rh_sample",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Temp_rh sample period idle"
+                    },
+                    "name": "temp_rh_sample_period_idle",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Temp_rh sample period active"
+                    },
+                    "name": "temp_rh_sample_period_active",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Temp high threshold"
+              },
+              "name": "temperature_threshold",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Temp high threshold"
+                    },
+                    "name": "temp_high_threshold",
+                    "schema": "long"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Temp low threshold"
+                    },
+                    "name": "temp_low_threshold",
+                    "schema": "long"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Temp threshold enable"
+                    },
+                    "name": "temp_threshold_enable",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Rh high"
+              },
+              "name": "rh_threshold",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Rh high"
+                    },
+                    "name": "rh_high",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Rh low"
+                    },
+                    "name": "rh_low",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Rh threshold enable"
+                    },
+                    "name": "rh_threshold_enable",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Mcu temp sample period idle"
+              },
+              "name": "mcu_temp_sample",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Mcu temp sample period idle"
+                    },
+                    "name": "mcu_temp_sample_period_idle",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Mcu temp sample period active"
+                    },
+                    "name": "mcu_temp_sample_period_active",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Mcu temp high"
+              },
+              "name": "mcu_temp_threshold",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Mcu temp high"
+                    },
+                    "name": "mcu_temp_high",
+                    "schema": "long"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Mcu temp low"
+                    },
+                    "name": "mcu_temp_low",
+                    "schema": "long"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Mcu temp threshold enable"
+                    },
+                    "name": "mcu_temp_threshold_enable",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Analog sample period idle"
+              },
+              "name": "analog_in_sample_period",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Analog sample period idle"
+                    },
+                    "name": "analog_sample_period_idle",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Analog sample period active"
+                    },
+                    "name": "analog_sample_period_active",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Analog high"
+              },
+              "name": "analog_threshold",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Analog high"
+                    },
+                    "name": "analog_high",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Analog low"
+                    },
+                    "name": "analog_low",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Analog threshold enable"
+                    },
+                    "name": "analog_threshold_enable",
+                    "schema": "double"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Light"
+        },
+        "name": "light",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Light sample period"
+              },
+              "name": "light_sample_period",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Light threshold enable"
+              },
+              "name": "light_thresholds",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Light threshold enable"
+                    },
+                    "name": "light_threshold_enable",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Light threshold control"
+                    },
+                    "name": "light_threshold_control",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Light intensity"
+              },
+              "name": "values_to_transmit",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Light intensity"
+                    },
+                    "name": "light_intensity",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Light state"
+                    },
+                    "name": "light_state",
+                    "schema": "double"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Pir"
+        },
+        "name": "pir",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Grace period"
+              },
+              "name": "grace_period",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Count threshold"
+              },
+              "name": "count_threshold",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Period threshold"
+              },
+              "name": "period_threshold",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Pir enable"
+              },
+              "name": "mode",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Pir enable"
+                    },
+                    "name": "pir_enable",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Pir event tx"
+                    },
+                    "name": "pir_event_tx",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Pir motion state"
+                    },
+                    "name": "pir_motion_state",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Pir motion count"
+                    },
+                    "name": "pir_motion_count",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Post turnon hold off"
+              },
+              "name": "hold_off_int",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Post turnon hold off"
+                    },
+                    "name": "post_turnon_hold_off",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Post disturbance hold off"
+                    },
+                    "name": "post_disturbance_hold_off",
+                    "schema": "double"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Moisture"
+        },
+        "name": "moisture",
+        "schema": {
+          "@type": "Array",
+          "elementSchema": "double"
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Enhanced accel"
+        },
+        "name": "enhanced_accel",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Sample analysis enabled"
+              },
+              "name": "samplen_analysis_analysis_enabled",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Sample analysis enabled"
+                    },
+                    "name": "sample_analysis_enabled",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Iir filter recall factor"
+              },
+              "name": "iirn_filter_recall_factor",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Iir filter recall factor"
+                    },
+                    "name": "iir_filter_recall_factor",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Cutoff freq"
+              },
+              "name": "hpf_config",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Cutoff freq"
+                    },
+                    "name": "cutoff_freq",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Hpf on sample"
+                    },
+                    "name": "hpf_on_sample",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Hpf on accel interrupts"
+                    },
+                    "name": "hpf_on_accel_interrupts",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Hpf on accel output"
+                    },
+                    "name": "hpf_on_accel_output",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Nonzero MLs"
+              },
+              "name": "ml_config",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Nonzero MLs"
+                    },
+                    "name": "nonzero_MLs",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Ml upper limit"
+                    },
+                    "name": "ml_upper_limit",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Ml lower limit"
+                    },
+                    "name": "ml_lower_limit",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Ml step"
+                    },
+                    "name": "ml_step",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Num of dlims"
+              },
+              "name": "ml1_dlim_config",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Num of dlims"
+                    },
+                    "name": "num_of_dlims",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Dlim0 0"
+                    },
+                    "name": "dlim0_0",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Dlim step 0"
+                    },
+                    "name": "dlim_step_0",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Threshold enable 0"
+                    },
+                    "name": "threshold_enable_0",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "AE10 threshold"
+                    },
+                    "name": "AE10_threshold",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "AE11 threshold"
+                    },
+                    "name": "AE11_threshold",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "AE12 threshold"
+                    },
+                    "name": "AE12_threshold",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "AE13 threshold"
+                    },
+                    "name": "AE13_threshold",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Num of dlims"
+              },
+              "name": "ml2_dlim_config",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Num of dlims"
+                    },
+                    "name": "num_of_dlims",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Dlim0 1"
+                    },
+                    "name": "dlim0_1",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Dlim step 1"
+                    },
+                    "name": "dlim_step_1",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Threshold enabled 1"
+                    },
+                    "name": "threshold_enabled_1",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "AE20 threshold"
+                    },
+                    "name": "AE20_threshold",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "AE21 threshold"
+                    },
+                    "name": "AE21_threshold",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "AE22 threshold"
+                    },
+                    "name": "AE22_threshold",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "AE23 threshold"
+                    },
+                    "name": "AE23_threshold",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "AE count enabled"
+              },
+              "name": "sample_analysis",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "AE count enabled"
+                    },
+                    "name": "AE_count_enabled",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "AE duration SD Enabled"
+                    },
+                    "name": "AE_duration_SD_Enabled",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "AE duration max enabled"
+                    },
+                    "name": "AE_duration_max_enabled",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "AE duration enabled"
+                    },
+                    "name": "AE_duration_enabled",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "AE duration total enabled"
+                    },
+                    "name": "AE_duration_total_enabled",
+                    "schema": "double"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Command control register"
+        },
+        "name": "command_control_register",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "Lora configuration"
+              },
+              "name": "write_to_flash",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Lora configuration"
+                    },
+                    "name": "lora_configuration",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "App configuration"
+                    },
+                    "name": "app_configuration",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Restart sensor"
+                    },
+                    "name": "restart_sensor",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "App major version"
+              },
+              "name": "firmware_version",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "App major version"
+                    },
+                    "name": "app_major_version",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "App minor version"
+                    },
+                    "name": "app_minor_version",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "App revision"
+                    },
+                    "name": "app_revision",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Loramac major version"
+                    },
+                    "name": "loramac_major_version",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Loramac minor version"
+                    },
+                    "name": "loramac_minor_version",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Loramac revision"
+                    },
+                    "name": "loramac_revision",
+                    "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Region"
+                    },
+                    "name": "region",
+                    "schema": "double"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Configuration factory reset"
+              },
+              "name": "configurationn_factory_factory_reset",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Configuration factory reset"
+                    },
+                    "name": "configuration_factory_reset",
+                    "schema": "double"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Battery voltage"
+        },
+        "name": "battery_voltage",
+        "schema": "long"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Reed state"
+        },
+        "name": "reed_state",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Light detected"
+        },
+        "name": "light_detected",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Ambient temperature"
+        },
+        "name": "ambient_temperature",
+        "schema": "long"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Relative humidity"
+        },
+        "name": "relative_humidity",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Impact magnitude"
+        },
+        "name": "impact_magnitude",
+        "schema": "long"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Acceleration"
+        },
+        "name": "acceleration",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "displayName": {
+                "en": "X"
+              },
+              "name": "x",
+              "schema": "long"
+            },
+            {
+              "displayName": {
+                "en": "Y"
+              },
+              "name": "y",
+              "schema": "long"
+            },
+            {
+              "displayName": {
+                "en": "Z"
+              },
+              "name": "z",
+              "schema": "long"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Reed count"
+        },
+        "name": "reed_count",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Motion event state"
+        },
+        "name": "motion_event_state",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Mcu temperature"
+        },
+        "name": "mcu_temperature",
+        "schema": "long"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Impact alarm"
+        },
+        "name": "impact_alarm",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Motion event count"
+        },
+        "name": "motion_event_count",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "External connector state"
+        },
+        "name": "external_connector_state",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "External connector counter"
+        },
+        "name": "external_connector_counter",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Light intensity"
+        },
+        "name": "light_intensity",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "External connector analog mv"
+        },
+        "name": "external_connector_analog_mv",
+        "schema": "long"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Duration total"
+        },
+        "name": "duration_total",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Duration min"
+        },
+        "name": "duration_min",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Duration max"
+        },
+        "name": "duration_max",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Duration sd"
+        },
+        "name": "duration_sd",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Count"
+        },
+        "name": "count",
+        "schema": "double"
+      }
+    ],
+    "displayName": {
+      "en": "Smart Room Sensor Gen3"
+    },
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]
+  }
+]
