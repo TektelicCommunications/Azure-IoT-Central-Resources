@@ -130,7 +130,7 @@
             },
             {
               "displayName": {
-                "en": "Adr"
+                "en": "Loramac Opts"
               },
               "name": "loramac_opts",
               "dtmi:dtdl:property:schema;2": {
@@ -169,7 +169,7 @@
             },
             {
               "displayName": {
-                "en": "Dr number"
+                "en": "Loramac DR TX"
               },
               "name": "loramac_dr_tx",
               "dtmi:dtdl:property:schema;2": {
@@ -186,7 +186,7 @@
                     "displayName": {
                       "en": "Tx power"
                     },
-                    "name": "tx_power",
+                    "name": "tx_power_number",
                     "schema": "double"
                   }
                 ]
@@ -194,7 +194,7 @@
             },
             {
               "displayName": {
-                "en": "Frequency"
+                "en": "Loramac RX2"
               },
               "name": "loramac_rx2",
               "dtmi:dtdl:property:schema;2": {
@@ -216,20 +216,6 @@
                   }
                 ]
               }
-            },
-            {
-              "displayName": {
-                "en": "Loramac net id msb"
-              },
-              "name": "loramac_net_id_msb",
-              "schema": "double"
-            },
-            {
-              "displayName": {
-                "en": "Loramac net id lsb"
-              },
-              "name": "loramac_net_id_lsb",
-              "schema": "double"
             }
           ]
         }
@@ -245,72 +231,72 @@
           "fields": [
             {
               "displayName": {
-                "en": "Core"
+                "en": "Seconds per core tick"
               },
-              "name": "core",
+              "name": "seconds_per_core_tick",
               "schema": "double"
             },
             {
               "displayName": {
-                "en": "Per battery"
+                "en": "Tick per battery"
               },
-              "name": "per_battery",
+              "name": "tick_per_battery",
               "schema": "double"
             },
             {
               "displayName": {
-                "en": "Per temperature"
+                "en": "Tick per temperature"
               },
-              "name": "per_temperature",
+              "name": "tick_per_ambient_temperature",
               "schema": "double"
             },
             {
               "displayName": {
-                "en": "Per relative humidity"
+                "en": "Tick per relative humidity"
               },
-              "name": "per_relative_humidity",
+              "name": "tick_per_relative_humidity",
               "schema": "double"
             },
             {
               "displayName": {
-                "en": "Per digital input"
+                "en": "Tick per reed switch"
               },
-              "name": "per_digital_input",
+              "name": "tick_per_reed_switch",
               "schema": "double"
             },
             {
               "displayName": {
-                "en": "Per light"
+                "en": "Tick per light"
               },
-              "name": "per_light",
+              "name": "tick_per_light",
               "schema": "double"
             },
             {
               "displayName": {
-                "en": "Per acceleration"
+                "en": "Tick per acceleration"
               },
-              "name": "per_acceleration",
+              "name": "tick_per_accelerometer",
               "schema": "double"
             },
             {
               "displayName": {
-                "en": "Per mcu temperature"
+                "en": "Tick per mcu temperature"
               },
-              "name": "per_mcu_temperature",
+              "name": "tick_per_mcu_temperature",
               "schema": "double"
             },
             {
               "displayName": {
-                "en": "Per pir"
+                "en": "Tick per pir"
               },
-              "name": "per_pir",
+              "name": "tick_per_pir",
               "schema": "double"
             },
             {
               "displayName": {
-                "en": "Per external connector"
+                "en": "Tick per external connector"
               },
-              "name": "per_external_connector",
+              "name": "tick_per_external_connector",
               "schema": "double"
             }
           ]
@@ -327,24 +313,24 @@
           "fields": [
             {
               "displayName": {
-                "en": "Rising edge"
+                "en": "Reed mode"
               },
-              "name": "mode",
+              "name": "reed_mode",
               "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
                   {
                     "displayName": {
-                      "en": "Rising edge"
+                      "en": "Rising edge enabled"
                     },
-                    "name": "rising_edge",
+                    "name": "rising_edge_enabled",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Falling edge"
+                      "en": "Falling edge enabled"
                     },
-                    "name": "falling_edge",
+                    "name": "falling_edge_enabled",
                     "schema": "double"
                   }
                 ]
@@ -359,24 +345,24 @@
             },
             {
               "displayName": {
-                "en": "Report state"
+                "en": "Value to transmit"
               },
-              "name": "values_to_transmit",
+              "name": "reed_tx",
               "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
                   {
                     "displayName": {
-                      "en": "Report state"
+                      "en": "Report state enabled"
                     },
-                    "name": "report_state",
+                    "name": "report_state_enabled",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Report count"
+                      "en": "Report count enabled"
                     },
-                    "name": "report_count",
+                    "name": "report_count_enabled",
                     "schema": "double"
                   }
                 ]
@@ -396,7 +382,7 @@
           "fields": [
             {
               "displayName": {
-                "en": "Rising edge"
+                "en": "Mode"
               },
               "name": "mode",
               "dtmi:dtdl:property:schema;2": {
@@ -404,16 +390,16 @@
                 "fields": [
                   {
                     "displayName": {
-                      "en": "Rising edge"
+                      "en": "Rising edge enabled"
                     },
-                    "name": "rising_edge",
+                    "name": "rising_edge_enabled",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Falling edge"
+                      "en": "Falling edge enabled"
                     },
-                    "name": "falling_edge",
+                    "name": "falling_edge_enabled",
                     "schema": "double"
                   },
                   {
@@ -435,24 +421,24 @@
             },
             {
               "displayName": {
-                "en": "State"
+                "en": "Values to transmit"
               },
-              "name": "values_to_transmit",
+              "name": "tx",
               "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
                   {
                     "displayName": {
-                      "en": "State"
+                      "en": "Report state enabled"
                     },
-                    "name": "state",
+                    "name": "report_state_enabled",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Count"
+                      "en": "Report count enabled"
                     },
-                    "name": "count",
+                    "name": "report_count_enabled",
                     "schema": "double"
                   }
                 ]
@@ -472,9 +458,9 @@
           "fields": [
             {
               "displayName": {
-                "en": "Impact alarm threshold"
+                "en": "Impact event threshold"
               },
-              "name": "impact_alarm_threshold",
+              "name": "impact_event_threshold",
               "schema": "double"
             },
             {
@@ -486,24 +472,24 @@
             },
             {
               "displayName": {
-                "en": "Impact alarm"
+                "en": "Values to transmit"
               },
-              "name": "values_to_transmit",
+              "name": "tx",
               "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
                   {
                     "displayName": {
-                      "en": "Impact alarm"
+                      "en": "Report alarm enabled"
                     },
-                    "name": "impact_alarm",
+                    "name": "report_alarm_enabled",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Magnitude"
+                      "en": "Report magnitude enabled"
                     },
-                    "name": "magnitude",
+                    "name": "report_magnitude_enabled",
                     "dtmi:dtdl:property:schema;2": {
                       "@type": "Array",
                       "elementSchema": "double"
@@ -511,9 +497,9 @@
                   },
                   {
                     "displayName": {
-                      "en": "Vector"
+                      "en": "Report vector enabled"
                     },
-                    "name": "vector",
+                    "name": "report_vector_enabled",
                     "dtmi:dtdl:property:schema;2": {
                       "@type": "Array",
                       "elementSchema": "double"
@@ -526,23 +512,12 @@
               "displayName": {
                 "en": "Impact grace period"
               },
-              "name": "debounce_time",
-              "dtmi:dtdl:property:schema;2": {
-                "@type": "Object",
-                "fields": [
-                  {
-                    "displayName": {
-                      "en": "Impact grace period"
-                    },
-                    "name": "impact_grace_period",
-                    "schema": "double"
-                  }
-                ]
-              }
+              "name": "impact_grace_period",
+              "schema": "double"
             },
             {
               "displayName": {
-                "en": "Impact alarm threshold enable"
+                "en": "Mode"
               },
               "name": "mode",
               "dtmi:dtdl:property:schema;2": {
@@ -550,44 +525,44 @@
                 "fields": [
                   {
                     "displayName": {
-                      "en": "Impact alarm threshold enable"
+                      "en": "Impact threshold enabled"
                     },
-                    "name": "impact_alarm_threshold_enable",
+                    "name": "impact_threshold_enabled",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Event threshold enable"
+                      "en": "Acceleration threshold enabled"
                     },
-                    "name": "event_threshold_enable",
+                    "name": "acceleration_threshold_enabled",
                     "schema": "double"
                   },
                   {
                     "displayName": {
                       "en": "X axis"
                     },
-                    "name": "x_axis",
+                    "name": "xaxis_enabled",
                     "schema": "double"
                   },
                   {
                     "displayName": {
                       "en": "Y axis"
                     },
-                    "name": "y_axis",
+                    "name": "yaxis_enabled",
                     "schema": "double"
                   },
                   {
                     "displayName": {
                       "en": "Z axis"
                     },
-                    "name": "z_axis",
+                    "name": "zaxis_enabled",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Power"
+                      "en": "Power on"
                     },
-                    "name": "power",
+                    "name": "poweron",
                     "schema": "double"
                   }
                 ]
@@ -595,7 +570,7 @@
             },
             {
               "displayName": {
-                "en": "Sample rate"
+                "en": "Sensitivity"
               },
               "name": "sensitivity",
               "dtmi:dtdl:property:schema;2": {
@@ -607,29 +582,36 @@
                     },
                     "name": "sample_rate",
                     "schema": "double"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Measurement range"
+                    },
+                    "name": "measurement_range",
+                    "schema": "double"
                   }
                 ]
               }
             },
             {
               "displayName": {
-                "en": "Alarm grace period"
+                "en": "Impact alarm grace period"
               },
-              "name": "alarm_grace_period",
+              "name": "impact_alarm_grace_period",
               "schema": "double"
             },
             {
               "displayName": {
-                "en": "Alarm event count"
+                "en": "Impact alarm threshold count"
               },
-              "name": "alarm_event_count",
+              "name": "impact_alarm_threshold_count",
               "schema": "double"
             },
             {
               "displayName": {
-                "en": "Alarm threshold period"
+                "en": "Impact alarm threshold period"
               },
-              "name": "alarm_threshold_period",
+              "name": "impact_alarm_threshold_period",
               "schema": "double"
             }
           ]
@@ -638,32 +620,32 @@
       {
         "@type": "Telemetry",
         "displayName": {
-          "en": "Temperature humidity analogIn"
+          "en": "Temperature humidity analog In"
         },
-        "name": "temperature_humidity_analogIn",
+        "name": "temperature_rh",
         "schema": {
           "@type": "Object",
           "fields": [
             {
               "displayName": {
-                "en": "Temp_rh sample period idle"
+                "en": "Ambient temperature rh sample"
               },
-              "name": "ambient_temp_rh_sample",
+              "name": "ambient_temperature_rh_sample",
               "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
                   {
                     "displayName": {
-                      "en": "Temp_rh sample period idle"
+                      "en": "Sample period idle"
                     },
-                    "name": "temp_rh_sample_period_idle",
+                    "name": "sample_period_idle",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Temp_rh sample period active"
+                      "en": "Sample period active"
                     },
-                    "name": "temp_rh_sample_period_active",
+                    "name": "sample_period_active",
                     "schema": "double"
                   }
                 ]
@@ -671,9 +653,9 @@
             },
             {
               "displayName": {
-                "en": "Temp high threshold"
+                "en": "Ambient temperature threshold"
               },
-              "name": "temperature_threshold",
+              "name": "ambient_temperature_threshold",
               "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
@@ -681,31 +663,31 @@
                     "displayName": {
                       "en": "Temp high threshold"
                     },
-                    "name": "temp_high_threshold",
+                    "name": "high",
                     "schema": "long"
                   },
                   {
                     "displayName": {
                       "en": "Temp low threshold"
                     },
-                    "name": "temp_low_threshold",
+                    "name": "low",
                     "schema": "long"
                   },
                   {
                     "displayName": {
-                      "en": "Temp threshold enable"
+                      "en": "Temp threshold enabled"
                     },
-                    "name": "temp_threshold_enable",
-                    "schema": "double"
+                    "name": "enabled",
+                    "schema": "long"
                   }
                 ]
               }
             },
             {
               "displayName": {
-                "en": "Rh high"
+                "en": "Rh threshold"
               },
-              "name": "rh_threshold",
+              "name": "relative_humidity_threshold",
               "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
@@ -713,46 +695,46 @@
                     "displayName": {
                       "en": "Rh high"
                     },
-                    "name": "rh_high",
+                    "name": "high",
                     "schema": "double"
                   },
                   {
                     "displayName": {
                       "en": "Rh low"
                     },
-                    "name": "rh_low",
+                    "name": "low",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Rh threshold enable"
+                      "en": "Rh threshold enabled"
                     },
-                    "name": "rh_threshold_enable",
-                    "schema": "double"
+                    "name": "enabled",
+                    "schema": "long"
                   }
                 ]
               }
             },
             {
               "displayName": {
-                "en": "Mcu temp sample period idle"
+                "en": "Mcu temperature"
               },
-              "name": "mcu_temp_sample",
+              "name": "mcu_temperature",
               "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
                   {
                     "displayName": {
-                      "en": "Mcu temp sample period idle"
+                      "en": "Sample period idle"
                     },
-                    "name": "mcu_temp_sample_period_idle",
+                    "name": "sample_period_idle",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Mcu temp sample period active"
+                      "en": "Sample period active"
                     },
-                    "name": "mcu_temp_sample_period_active",
+                    "name": "sample_period_active",
                     "schema": "double"
                   }
                 ]
@@ -760,9 +742,9 @@
             },
             {
               "displayName": {
-                "en": "Mcu temp high"
+                "en": "Mcu temp threshold"
               },
-              "name": "mcu_temp_threshold",
+              "name": "mcu_temperature_threshold",
               "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
@@ -770,46 +752,46 @@
                     "displayName": {
                       "en": "Mcu temp high"
                     },
-                    "name": "mcu_temp_high",
+                    "name": "high",
                     "schema": "long"
                   },
                   {
                     "displayName": {
                       "en": "Mcu temp low"
                     },
-                    "name": "mcu_temp_low",
+                    "name": "low",
                     "schema": "long"
                   },
                   {
                     "displayName": {
-                      "en": "Mcu temp threshold enable"
+                      "en": "Mcu temp enabled"
                     },
-                    "name": "mcu_temp_threshold_enable",
-                    "schema": "double"
+                    "name": "enabled",
+                    "schema": "long"
                   }
                 ]
               }
             },
             {
               "displayName": {
-                "en": "Analog sample period idle"
+                "en": "Analog"
               },
-              "name": "analog_in_sample_period",
+              "name": "analog",
               "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
                   {
                     "displayName": {
-                      "en": "Analog sample period idle"
+                      "en": "Sample period idle"
                     },
-                    "name": "analog_sample_period_idle",
+                    "name": "sample_period_idle",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Analog sample period active"
+                      "en": "Sample period active"
                     },
-                    "name": "analog_sample_period_active",
+                    "name": "sample_period_active",
                     "schema": "double"
                   }
                 ]
@@ -817,7 +799,7 @@
             },
             {
               "displayName": {
-                "en": "Analog high"
+                "en": "Analog threshold"
               },
               "name": "analog_threshold",
               "dtmi:dtdl:property:schema;2": {
@@ -827,21 +809,21 @@
                     "displayName": {
                       "en": "Analog high"
                     },
-                    "name": "analog_high",
+                    "name": "high",
                     "schema": "double"
                   },
                   {
                     "displayName": {
                       "en": "Analog low"
                     },
-                    "name": "analog_low",
+                    "name": "low",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Analog threshold enable"
+                      "en": "Analog enabled"
                     },
-                    "name": "analog_threshold_enable",
+                    "name": "enabled",
                     "schema": "double"
                   }
                 ]
@@ -868,24 +850,24 @@
             },
             {
               "displayName": {
-                "en": "Light threshold enable"
+                "en": "Light threshold"
               },
-              "name": "light_thresholds",
+              "name": "light_threshold",
               "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
                   {
                     "displayName": {
-                      "en": "Light threshold enable"
+                      "en": "Light threshold enabled"
                     },
-                    "name": "light_threshold_enable",
+                    "name": "enabled",
                     "schema": "double"
                   },
                   {
                     "displayName": {
                       "en": "Light threshold control"
                     },
-                    "name": "light_threshold_control",
+                    "name": "control",
                     "schema": "double"
                   }
                 ]
@@ -893,9 +875,9 @@
             },
             {
               "displayName": {
-                "en": "Light intensity"
+                "en": "Values to transmit"
               },
-              "name": "values_to_transmit",
+              "name": "tx",
               "dtmi:dtdl:property:schema;2": {
                 "@type": "Object",
                 "fields": [
@@ -903,14 +885,14 @@
                     "displayName": {
                       "en": "Light intensity"
                     },
-                    "name": "light_intensity",
+                    "name": "intensity_reported",
                     "schema": "double"
                   },
                   {
                     "displayName": {
                       "en": "Light state"
                     },
-                    "name": "light_state",
+                    "name": "state_reported",
                     "schema": "double"
                   }
                 ]
@@ -937,21 +919,21 @@
             },
             {
               "displayName": {
-                "en": "Count threshold"
+                "en": "Threshold"
               },
-              "name": "count_threshold",
+              "name": "threshold",
               "schema": "double"
             },
             {
               "displayName": {
-                "en": "Period threshold"
+                "en": "Threshold period"
               },
-              "name": "period_threshold",
+              "name": "threshold_period",
               "schema": "double"
             },
             {
               "displayName": {
-                "en": "Pir enable"
+                "en": "Mode"
               },
               "name": "mode",
               "dtmi:dtdl:property:schema;2": {
@@ -959,55 +941,30 @@
                 "fields": [
                   {
                     "displayName": {
-                      "en": "Pir enable"
+                      "en": "Motion count report"
                     },
-                    "name": "pir_enable",
+                    "name": "motion_count_reported",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Pir event tx"
+                      "en": "Motion state report"
                     },
-                    "name": "pir_event_tx",
+                    "name": "motion_state_reported",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Pir motion state"
+                      "en": "Event transmission enabled"
                     },
-                    "name": "pir_motion_state",
+                    "name": "event_transmission_enabled",
                     "schema": "double"
                   },
                   {
                     "displayName": {
-                      "en": "Pir motion count"
+                      "en": "Transducer enabled"
                     },
-                    "name": "pir_motion_count",
-                    "schema": "double"
-                  }
-                ]
-              }
-            },
-            {
-              "displayName": {
-                "en": "Post turnon hold off"
-              },
-              "name": "hold_off_int",
-              "dtmi:dtdl:property:schema;2": {
-                "@type": "Object",
-                "fields": [
-                  {
-                    "displayName": {
-                      "en": "Post turnon hold off"
-                    },
-                    "name": "post_turnon_hold_off",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Post disturbance hold off"
-                    },
-                    "name": "post_disturbance_hold_off",
+                    "name": "transducer_enabled",
                     "schema": "double"
                   }
                 ]
@@ -1023,312 +980,35 @@
         },
         "name": "moisture",
         "schema": {
-          "@type": "Array",
-          "elementSchema": "double"
-        }
-      },
-      {
-        "@type": "Telemetry",
-        "displayName": {
-          "en": "Enhanced accel"
-        },
-        "name": "enhanced_accel",
-        "schema": {
           "@type": "Object",
           "fields": [
             {
               "displayName": {
-                "en": "Sample analysis enabled"
+                "en": "Sample period"
               },
-              "name": "samplen_analysis_analysis_enabled",
-              "dtmi:dtdl:property:schema;2": {
-                "@type": "Object",
-                "fields": [
-                  {
-                    "displayName": {
-                      "en": "Sample analysis enabled"
-                    },
-                    "name": "sample_analysis_enabled",
-                    "schema": "double"
-                  }
-                ]
-              }
+              "name": "sample_period",
+              "schema": "long"
             },
             {
               "displayName": {
-                "en": "Iir filter recall factor"
+                "en": "Threshold"
               },
-              "name": "iirn_filter_recall_factor",
-              "dtmi:dtdl:property:schema;2": {
-                "@type": "Object",
-                "fields": [
-                  {
-                    "displayName": {
-                      "en": "Iir filter recall factor"
-                    },
-                    "name": "iir_filter_recall_factor",
-                    "schema": "double"
-                  }
-                ]
-              }
+              "name": "threshold",
+              "schema": "long"
             },
             {
               "displayName": {
-                "en": "Cutoff freq"
+                "en": "Sensing enabled"
               },
-              "name": "hpf_config",
-              "dtmi:dtdl:property:schema;2": {
-                "@type": "Object",
-                "fields": [
-                  {
-                    "displayName": {
-                      "en": "Cutoff freq"
-                    },
-                    "name": "cutoff_freq",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Hpf on sample"
-                    },
-                    "name": "hpf_on_sample",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Hpf on accel interrupts"
-                    },
-                    "name": "hpf_on_accel_interrupts",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Hpf on accel output"
-                    },
-                    "name": "hpf_on_accel_output",
-                    "schema": "double"
-                  }
-                ]
-              }
+              "name": "sensing_enabled",
+              "schema": "long"
             },
             {
               "displayName": {
-                "en": "Nonzero MLs"
+                "en": "Calibration dry"
               },
-              "name": "ml_config",
-              "dtmi:dtdl:property:schema;2": {
-                "@type": "Object",
-                "fields": [
-                  {
-                    "displayName": {
-                      "en": "Nonzero MLs"
-                    },
-                    "name": "nonzero_MLs",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Ml upper limit"
-                    },
-                    "name": "ml_upper_limit",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Ml lower limit"
-                    },
-                    "name": "ml_lower_limit",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Ml step"
-                    },
-                    "name": "ml_step",
-                    "schema": "double"
-                  }
-                ]
-              }
-            },
-            {
-              "displayName": {
-                "en": "Num of dlims"
-              },
-              "name": "ml1_dlim_config",
-              "dtmi:dtdl:property:schema;2": {
-                "@type": "Object",
-                "fields": [
-                  {
-                    "displayName": {
-                      "en": "Num of dlims"
-                    },
-                    "name": "num_of_dlims",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Dlim0 0"
-                    },
-                    "name": "dlim0_0",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Dlim step 0"
-                    },
-                    "name": "dlim_step_0",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Threshold enable 0"
-                    },
-                    "name": "threshold_enable_0",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "AE10 threshold"
-                    },
-                    "name": "AE10_threshold",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "AE11 threshold"
-                    },
-                    "name": "AE11_threshold",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "AE12 threshold"
-                    },
-                    "name": "AE12_threshold",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "AE13 threshold"
-                    },
-                    "name": "AE13_threshold",
-                    "schema": "double"
-                  }
-                ]
-              }
-            },
-            {
-              "displayName": {
-                "en": "Num of dlims"
-              },
-              "name": "ml2_dlim_config",
-              "dtmi:dtdl:property:schema;2": {
-                "@type": "Object",
-                "fields": [
-                  {
-                    "displayName": {
-                      "en": "Num of dlims"
-                    },
-                    "name": "num_of_dlims",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Dlim0 1"
-                    },
-                    "name": "dlim0_1",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Dlim step 1"
-                    },
-                    "name": "dlim_step_1",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Threshold enabled 1"
-                    },
-                    "name": "threshold_enabled_1",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "AE20 threshold"
-                    },
-                    "name": "AE20_threshold",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "AE21 threshold"
-                    },
-                    "name": "AE21_threshold",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "AE22 threshold"
-                    },
-                    "name": "AE22_threshold",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "AE23 threshold"
-                    },
-                    "name": "AE23_threshold",
-                    "schema": "double"
-                  }
-                ]
-              }
-            },
-            {
-              "displayName": {
-                "en": "AE count enabled"
-              },
-              "name": "sample_analysis",
-              "dtmi:dtdl:property:schema;2": {
-                "@type": "Object",
-                "fields": [
-                  {
-                    "displayName": {
-                      "en": "AE count enabled"
-                    },
-                    "name": "AE_count_enabled",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "AE duration SD Enabled"
-                    },
-                    "name": "AE_duration_SD_Enabled",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "AE duration max enabled"
-                    },
-                    "name": "AE_duration_max_enabled",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "AE duration enabled"
-                    },
-                    "name": "AE_duration_enabled",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "AE duration total enabled"
-                    },
-                    "name": "AE_duration_total_enabled",
-                    "schema": "double"
-                  }
-                ]
-              }
+              "name": "calibration_dry",
+              "schema": "long"
             }
           ]
         }
@@ -1336,121 +1016,60 @@
       {
         "@type": "Telemetry",
         "displayName": {
-          "en": "Command control register"
+          "en": "Firmware_version"
         },
-        "name": "command_control_register",
+        "name": "firmware_version",
         "schema": {
           "@type": "Object",
           "fields": [
             {
               "displayName": {
-                "en": "Lora configuration"
-              },
-              "name": "write_to_flash",
-              "dtmi:dtdl:property:schema;2": {
-                "@type": "Object",
-                "fields": [
-                  {
-                    "displayName": {
-                      "en": "Lora configuration"
-                    },
-                    "name": "lora_configuration",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "App configuration"
-                    },
-                    "name": "app_configuration",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Restart sensor"
-                    },
-                    "name": "restart_sensor",
-                    "schema": "double"
-                  }
-                ]
-              }
-            },
-            {
-              "displayName": {
                 "en": "App major version"
               },
-              "name": "firmware_version",
-              "dtmi:dtdl:property:schema;2": {
-                "@type": "Object",
-                "fields": [
-                  {
-                    "displayName": {
-                      "en": "App major version"
-                    },
-                    "name": "app_major_version",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "App minor version"
-                    },
-                    "name": "app_minor_version",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "App revision"
-                    },
-                    "name": "app_revision",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Loramac major version"
-                    },
-                    "name": "loramac_major_version",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Loramac minor version"
-                    },
-                    "name": "loramac_minor_version",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Loramac revision"
-                    },
-                    "name": "loramac_revision",
-                    "schema": "double"
-                  },
-                  {
-                    "displayName": {
-                      "en": "Region"
-                    },
-                    "name": "region",
-                    "schema": "double"
-                  }
-                ]
-              }
+              "name": "app_major_version",
+              "schema": "double"
             },
             {
               "displayName": {
-                "en": "Configuration factory reset"
+                "en": "App minor version"
               },
-              "name": "configurationn_factory_factory_reset",
-              "dtmi:dtdl:property:schema;2": {
-                "@type": "Object",
-                "fields": [
-                  {
-                    "displayName": {
-                      "en": "Configuration factory reset"
-                    },
-                    "name": "configuration_factory_reset",
-                    "schema": "double"
-                  }
-                ]
-              }
+              "name": "app_minor_version",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "App revision"
+              },
+              "name": "app_revision",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Loramac major version"
+              },
+              "name": "loramac_major_version",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Loramac minor version"
+              },
+              "name": "loramac_minor_version",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Loramac revision"
+              },
+              "name": "loramac_revision",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Region"
+              },
+              "name": "region",
+              "schema": "double"
             }
           ]
         }
@@ -1506,6 +1125,14 @@
       {
         "@type": "Telemetry",
         "displayName": {
+          "en": "Break In"
+        },
+        "name": "break_in",
+        "schema": "long"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
           "en": "Acceleration"
         },
         "name": "acceleration",
@@ -1547,6 +1174,14 @@
       {
         "@type": "Telemetry",
         "displayName": {
+          "en": "Moisture value"
+        },
+        "name": "moisture_value",
+        "schema": "double"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
           "en": "Motion event state"
         },
         "name": "motion_event_state",
@@ -1581,7 +1216,7 @@
         "displayName": {
           "en": "External connector state"
         },
-        "name": "external_connector_state",
+        "name": "extconnector_state",
         "schema": "double"
       },
       {
@@ -1589,7 +1224,7 @@
         "displayName": {
           "en": "External connector counter"
         },
-        "name": "external_connector_counter",
+        "name": "extconnector_count",
         "schema": "double"
       },
       {
@@ -1603,50 +1238,10 @@
       {
         "@type": "Telemetry",
         "displayName": {
-          "en": "External connector analog mv"
+          "en": "External connector analog"
         },
-        "name": "external_connector_analog_mv",
+        "name": "extconnector_analog",
         "schema": "long"
-      },
-      {
-        "@type": "Telemetry",
-        "displayName": {
-          "en": "Duration total"
-        },
-        "name": "duration_total",
-        "schema": "double"
-      },
-      {
-        "@type": "Telemetry",
-        "displayName": {
-          "en": "Duration min"
-        },
-        "name": "duration_min",
-        "schema": "double"
-      },
-      {
-        "@type": "Telemetry",
-        "displayName": {
-          "en": "Duration max"
-        },
-        "name": "duration_max",
-        "schema": "double"
-      },
-      {
-        "@type": "Telemetry",
-        "displayName": {
-          "en": "Duration sd"
-        },
-        "name": "duration_sd",
-        "schema": "double"
-      },
-      {
-        "@type": "Telemetry",
-        "displayName": {
-          "en": "Count"
-        },
-        "name": "count",
-        "schema": "double"
       }
     ],
     "displayName": {
