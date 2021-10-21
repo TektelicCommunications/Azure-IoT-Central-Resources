@@ -1,0 +1,798 @@
+[
+    {
+        "@id": "dtmi:tektelic:tundra_sensor;1",
+        "@type": "Interface",
+        "contents": [
+            {
+                "@id": "dtmi:tektelic:tundra_sensor:SendDownlink;1",
+                "@type": "Command",
+                "description": {
+                    "en": "Send downlink to the sensor"
+                },
+                "displayName": {
+                    "en": "Send Downlink"
+                },
+                "name": "SendDownlink",
+                "request": {
+                    "@type": "CommandPayload",
+                    "displayName": {
+                        "en": "Payload"
+                    },
+                    "name": "payload",
+                    "schema": {
+                        "@type": "Object",
+                        "displayName": {
+                            "en": "Object"
+                        },
+                        "fields": [
+                            {
+                                "displayName": {
+                                    "en": "Parameters"
+                                },
+                                "name": "params",
+                                "dtmi:dtdl:property:schema;2": {
+                                    "@type": "Object",
+                                    "displayName": {
+                                        "en": "Object"
+                                    },
+                                    "fields": [
+                                        {
+                                            "displayName": {
+                                                "en": "Port"
+                                            },
+                                            "name": "port",
+                                            "schema": "integer"
+                                        },
+                                        {
+                                            "displayName": {
+                                                "en": "Data in Base64 Format"
+                                            },
+                                            "name": "data",
+                                            "schema": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                "durable": true
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Deep sleep"
+                },
+                "name": "deep_sleep",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Deep sleep"
+                            },
+                            "name": "deep_sleep",
+                            "schema": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Lorawan"
+                },
+                "name": "lorawan",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Device eui"
+                            },
+                            "name": "device_eui",
+                            "schema": "string"
+                        },
+                        {
+                            "displayName": {
+                                "en": "App eui"
+                            },
+                            "name": "app_eui",
+                            "schema": "string"
+                        },
+                        {
+                            "displayName": {
+                                "en": "App key"
+                            },
+                            "name": "app_key",
+                            "schema": "string"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Device address"
+                            },
+                            "name": "device_address",
+                            "schema": "string"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Network session key"
+                            },
+                            "name": "network_session_key",
+                            "schema": "string"
+                        },
+                        {
+                            "displayName": {
+                                "en": "App session key"
+                            },
+                            "name": "app_session_key",
+                            "schema": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "S&f config"
+                },
+                "name": "s_f_config",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Rh tag status"
+                            },
+                            "name": "rh_tag_status",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Temp tag status"
+                            },
+                            "name": "temp_tag_status",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Ext probe tag status"
+                            },
+                            "name": "ext_probe_tag_status",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Loramac"
+                },
+                "name": "loramac",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Join mode"
+                            },
+                            "name": "join_mode",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Adr"
+                            },
+                            "name": "loramac_opts",
+                            "dtmi:dtdl:property:schema;2": {
+                                "@type": "Object",
+                                "fields": [
+                                    {
+                                        "displayName": {
+                                            "en": "Adr"
+                                        },
+                                        "name": "adr",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "Duty cycle"
+                                        },
+                                        "name": "duty_cycle",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "Sync word"
+                                        },
+                                        "name": "sync_word",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "Confirm mode"
+                                        },
+                                        "name": "confirm_mode",
+                                        "schema": "double"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "displayName": {
+                                "en": "Dr number"
+                            },
+                            "name": "loramac_dr_tx",
+                            "dtmi:dtdl:property:schema;2": {
+                                "@type": "Object",
+                                "fields": [
+                                    {
+                                        "displayName": {
+                                            "en": "Dr number"
+                                        },
+                                        "name": "dr_number",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "Tx power"
+                                        },
+                                        "name": "tx_power",
+                                        "schema": "double"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "displayName": {
+                                "en": "Frequency"
+                            },
+                            "name": "loramac_rx2",
+                            "dtmi:dtdl:property:schema;2": {
+                                "@type": "Object",
+                                "fields": [
+                                    {
+                                        "displayName": {
+                                            "en": "Frequency"
+                                        },
+                                        "name": "frequency",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "Dr number"
+                                        },
+                                        "name": "dr_number",
+                                        "schema": "double"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "displayName": {
+                                "en": "Loramac net id msb"
+                            },
+                            "name": "loramac_net_id_msb",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Loramac net id lsb"
+                            },
+                            "name": "loramac_net_id_lsb",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Ticks"
+                },
+                "name": "ticks",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Core"
+                            },
+                            "name": "core",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Per battery"
+                            },
+                            "name": "per_battery",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Per ambient temp"
+                            },
+                            "name": "per_ambient_temp",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Per ambient humidity"
+                            },
+                            "name": "per_ambient_humidity",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Per mcu temperature"
+                            },
+                            "name": "per_mcu_temperature",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Per ext probe"
+                            },
+                            "name": "per_ext_probe",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Ext probe"
+                },
+                "name": "ext_probe",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Input mode"
+                            },
+                            "name": "input_mode",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Falling edge"
+                            },
+                            "name": "falling_edge",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Rising edge"
+                            },
+                            "name": "rising_edge",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Count threshold"
+                            },
+                            "name": "count_threshold",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Digital input count"
+                            },
+                            "name": "digital_input_count",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Digital input state"
+                            },
+                            "name": "digital_input_state",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Temperature humidity"
+                },
+                "name": "temperature_humidity",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Sample period idle"
+                            },
+                            "name": "sample_period_idle",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Sample period active"
+                            },
+                            "name": "sample_period_active",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Low"
+                            },
+                            "name": "temperature_threshold",
+                            "dtmi:dtdl:property:schema;2": {
+                                "@type": "Object",
+                                "fields": [
+                                    {
+                                        "displayName": {
+                                            "en": "Low"
+                                        },
+                                        "name": "low",
+                                        "schema": "long"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "High"
+                                        },
+                                        "name": "high",
+                                        "schema": "long"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "displayName": {
+                                "en": "Temperature threshold enable"
+                            },
+                            "name": "temperature_threshold_enable",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Low"
+                            },
+                            "name": "rh_threshold",
+                            "dtmi:dtdl:property:schema;2": {
+                                "@type": "Object",
+                                "fields": [
+                                    {
+                                        "displayName": {
+                                            "en": "Low"
+                                        },
+                                        "name": "low",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "High"
+                                        },
+                                        "name": "high",
+                                        "schema": "double"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "displayName": {
+                                "en": "Rh threshold enable"
+                            },
+                            "name": "rh_enable",
+                            "dtmi:dtdl:property:schema;2": {
+                                "@type": "Object",
+                                "fields": [
+                                    {
+                                        "displayName": {
+                                            "en": "Rh threshold enable"
+                                        },
+                                        "name": "rh_threshold_enable",
+                                        "schema": "double"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Mcu temperature"
+                },
+                "name": "mcu_temperature",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Sample period idle"
+                            },
+                            "name": "sample_period_idle",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Sample period active"
+                            },
+                            "name": "sample_period_active",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "High"
+                            },
+                            "name": "threshold",
+                            "dtmi:dtdl:property:schema;2": {
+                                "@type": "Object",
+                                "fields": [
+                                    {
+                                        "displayName": {
+                                            "en": "High"
+                                        },
+                                        "name": "high",
+                                        "schema": "long"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "Low"
+                                        },
+                                        "name": "low",
+                                        "schema": "long"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "displayName": {
+                                "en": "Threshold enable"
+                            },
+                            "name": "threshold_enable",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Thermistor"
+                },
+                "name": "thermistor",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Ext thermistor sample period idle"
+                            },
+                            "name": "ext_thermistor_sample_period_idle",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Ext thermistor sample period active"
+                            },
+                            "name": "ext_thermistor_sample_period_active",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Ext thermistor high threshold"
+                            },
+                            "name": "ext_thermistor_high_threshold",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Ext thermistor low threshold"
+                            },
+                            "name": "ext_thermistor_low_threshold",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Ext thermistor threshold enable"
+                            },
+                            "name": "ext_thermistor_threshold_enable",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Command control register"
+                },
+                "name": "command_control_register",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "App configuration"
+                            },
+                            "name": "write_to_flash",
+                            "dtmi:dtdl:property:schema;2": {
+                                "@type": "Object",
+                                "fields": [
+                                    {
+                                        "displayName": {
+                                            "en": "App configuration"
+                                        },
+                                        "name": "app_configuration",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "Lora configuration"
+                                        },
+                                        "name": "lora_configuration",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "Restart sensor"
+                                        },
+                                        "name": "restart_sensor",
+                                        "schema": "double"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "displayName": {
+                                "en": "App major version"
+                            },
+                            "name": "firmware_version",
+                            "dtmi:dtdl:property:schema;2": {
+                                "@type": "Object",
+                                "fields": [
+                                    {
+                                        "displayName": {
+                                            "en": "App major version"
+                                        },
+                                        "name": "app_major_version",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "App minor version"
+                                        },
+                                        "name": "app_minor_version",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "App revision"
+                                        },
+                                        "name": "app_revision",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "Loramac major version"
+                                        },
+                                        "name": "loramac_major_version",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "Loramac minor version"
+                                        },
+                                        "name": "loramac_minor_version",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "Loramac revision"
+                                        },
+                                        "name": "loramac_revision",
+                                        "schema": "double"
+                                    },
+                                    {
+                                        "displayName": {
+                                            "en": "Region"
+                                        },
+                                        "name": "region",
+                                        "schema": "double"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "displayName": {
+                                "en": "Configuration factory reset"
+                            },
+                            "name": "configuration_factory_reset",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Fwd stored data"
+                },
+                "name": "fwd_stored_data",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Single tag request"
+                            },
+                            "name": "single_tag_request",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Battery"
+                },
+                "name": "battery",
+                "schema": "long"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Mcu temperature value"
+                },
+                "name": "mcu_temperature_value",
+                "schema": "long"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Ambient temperature"
+                },
+                "name": "ambient_temperature",
+                "schema": "long"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Relative humidity"
+                },
+                "name": "relative_humidity",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "External probe reed switch state"
+                },
+                "name": "external_probe_reed_switch_state",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "External probe reed switch count"
+                },
+                "name": "external_probe_reed_switch_count",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "External probe thermistor analog input"
+                },
+                "name": "external_probe_thermistor_analog_input",
+                "schema": "long"
+            }
+        ],
+        "displayName": {
+            "en": "Tundra Sensor"
+        },
+        "@context": [
+            "dtmi:iotcentral:context;2",
+            "dtmi:dtdl:context;2"
+        ]
+    }
+]
