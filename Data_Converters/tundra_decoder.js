@@ -208,9 +208,9 @@ if (port === 100) {
                 if(!decoded_data.hasOwnProperty('s_f_config')) {
                     decoded_data.s_f_config = {};
                 }
-                decoded_data.s_f_config.rh_tag_status = decode_field(arg, 4, 4, "unsigned");
-                decoded_data.s_f_config.temp_tag_status = decode_field(arg, 3, 3, "unsigned");
-                decoded_data.s_f_config.ext_probe_tag_status = decode_field(arg, 1, 1, "unsigned");
+                decoded_data.s_f_config.rh_tag_status = decode_field(arg, 12, 12, "unsigned");
+                decoded_data.s_f_config.temp_tag_status = decode_field(arg, 11, 11, "unsigned");
+                decoded_data.s_f_config.ext_probe_tag_status = decode_field(arg, 9, 9, "unsigned");
                 return 2;
             }
         },
