@@ -1,0 +1,903 @@
+[
+    {
+        "@id": "dtmi:tektelic:enterprise_asset_tracker_sensor;1",
+        "@type": "Interface",
+        "contents": [
+            {
+                "@id": "dtmi:tektelic:enterprise_asset_tracker_sensor:SendDownlink;1",
+                "@type": "Command",
+                "description": {
+                    "en": "Send downlink to the sensor"
+                },
+                "displayName": {
+                    "en": "Send Downlink"
+                },
+                "name": "SendDownlink",
+                "request": {
+                    "@type": "CommandPayload",
+                    "displayName": {
+                        "en": "Payload"
+                    },
+                    "name": "payload",
+                    "schema": {
+                        "@type": "Object",
+                        "displayName": {
+                            "en": "Object"
+                        },
+                        "fields": [
+                            {
+                                "displayName": {
+                                    "en": "Parameters"
+                                },
+                                "name": "params",
+                                "dtmi:dtdl:property:schema;2": {
+                                    "@type": "Object",
+                                    "displayName": {
+                                        "en": "Object"
+                                    },
+                                    "fields": [
+                                        {
+                                            "displayName": {
+                                                "en": "Port"
+                                            },
+                                            "name": "port",
+                                            "schema": "integer"
+                                        },
+                                        {
+                                            "displayName": {
+                                                "en": "Data in Base64 Format"
+                                            },
+                                            "name": "data",
+                                            "schema": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                "durable": true
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Battery status"
+                },
+                "name": "battery_status",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Life"
+                            },
+                            "name": "life",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Eos alert"
+                            },
+                            "name": "eos_alert",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Fsm state"
+                },
+                "name": "fsm_state",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Mcu temperature"
+                },
+                "name": "mcu_temperature",
+                "schema": "long"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Acceleration alarm"
+                },
+                "name": "acceleration_alarm",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Acceleration"
+                },
+                "name": "acceleration",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Xaxis"
+                            },
+                            "name": "xaxis",
+                            "schema": "long"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Yaxis"
+                            },
+                            "name": "yaxis",
+                            "schema": "long"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Zaxis"
+                            },
+                            "name": "zaxis",
+                            "schema": "long"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Device eui"
+                },
+                "name": "device_eui",
+                "schema": "string"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "App eui"
+                },
+                "name": "app_eui",
+                "schema": "string"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "App key"
+                },
+                "name": "app_key",
+                "schema": "string"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Device address"
+                },
+                "name": "device_address",
+                "schema": "string"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Network session key"
+                },
+                "name": "network_session_key",
+                "schema": "string"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "App session key"
+                },
+                "name": "app_session_key",
+                "schema": "string"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Loramac join mode"
+                },
+                "name": "loramac_join_mode",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Loramac opts"
+                },
+                "name": "loramac_opts",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Confirm mode"
+                            },
+                            "name": "confirm_mode",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Sync word"
+                            },
+                            "name": "sync_word",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Duty cycle"
+                            },
+                            "name": "duty_cycle",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Adr"
+                            },
+                            "name": "adr",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Loramac dr tx"
+                },
+                "name": "loramac_dr_tx",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Dr number"
+                            },
+                            "name": "dr_number",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Tx power number"
+                            },
+                            "name": "tx_power_number",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Loramac rx2"
+                },
+                "name": "loramac_rx2",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Frequency"
+                            },
+                            "name": "frequency",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Dr number"
+                            },
+                            "name": "dr_number",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Seconds per core tick"
+                },
+                "name": "seconds_per_core_tick",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Tick per battery"
+                },
+                "name": "tick_per_battery",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Tick per accelerometer"
+                },
+                "name": "tick_per_accelerometer",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Tick per ble default"
+                },
+                "name": "tick_per_ble_default",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Tick per ble stillness"
+                },
+                "name": "tick_per_ble_stillness",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Tick per ble mobility"
+                },
+                "name": "tick_per_ble_mobility",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Tick per temperature"
+                },
+                "name": "tick_per_temperature",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Mode"
+                },
+                "name": "mode",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Reed event type"
+                            },
+                            "name": "reed_event_type",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Battery voltage report"
+                            },
+                            "name": "battery_voltage_report",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Acceleration vector report"
+                            },
+                            "name": "acceleration_vector_report",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Temperature report"
+                            },
+                            "name": "temperature_report",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Ble report"
+                            },
+                            "name": "ble_report",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Event type1"
+                },
+                "name": "event_type1",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "M value"
+                            },
+                            "name": "m_value",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "N value"
+                            },
+                            "name": "n_value",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Event type2"
+                },
+                "name": "event_type2",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "T value"
+                            },
+                            "name": "t_value",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Accelerometer"
+                },
+                "name": "accelerometer",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "X axis enabled"
+                            },
+                            "name": "xaxis_enabled",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Y axis enabled"
+                            },
+                            "name": "yaxis_enabled",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Z axis enabled"
+                            },
+                            "name": "zaxis_enabled",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Accelerometer power"
+                            },
+                            "name": "accelerometer_power",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Sensitivity"
+                },
+                "name": "sensitivity",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Accelerometer sample rate"
+                            },
+                            "name": "accelerometer_sample_rate",
+                            "dtmi:dtdl:property:schema;2": {
+                                "@type": "Array",
+                                "elementSchema": "double"
+                            }
+                        },
+                        {
+                            "displayName": {
+                                "en": "Accelerometer measurement range"
+                            },
+                            "name": "accelerometer_measurement_range",
+                            "dtmi:dtdl:property:schema;2": {
+                                "@type": "Array",
+                                "elementSchema": "double"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Acceleration alarm threshold count"
+                },
+                "name": "acceleration_alarm_threshold_count",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Acceleration alarm threshold period"
+                },
+                "name": "acceleration_alarm_threshold_period",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Acceleration alarm threshold"
+                },
+                "name": "acceleration_alarm_threshold",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Acceleration alarm grace period"
+                },
+                "name": "acceleration_alarm_grace_period",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Accelerometer tx"
+                },
+                "name": "accelerometer_tx",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Report periodic enabled"
+                            },
+                            "name": "report_periodic_enabled",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Report alarm enabled"
+                            },
+                            "name": "report_alarm_enabled",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Ble scan interval"
+                },
+                "name": "ble_scan_interval",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Ble scan window"
+                },
+                "name": "ble_scan_window",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Ble scan duration"
+                },
+                "name": "ble_scan_duration",
+                "schema": {
+                    "@type": "Object",
+                    "displayName": {
+                        "en": "Object"
+                    },
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Periodic"
+                            },
+                            "name": "periodic",
+                            "schema": "float"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Event based"
+                            },
+                            "name": "event_based",
+                            "schema": "float"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Temperature sample period idle"
+                },
+                "name": "temperature_sample_period_idle",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Temperature sample period active"
+                },
+                "name": "temperature_sample_period_active",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Temperature threshold"
+                },
+                "name": "temperature_threshold",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "High"
+                            },
+                            "name": "high",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Low"
+                            },
+                            "name": "low",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Temperature threshold enabled"
+                },
+                "name": "temperature_threshold_enabled",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Firmware version"
+                },
+                "name": "firmware_version",
+                "schema": {
+                    "@type": "Object",
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "App major version"
+                            },
+                            "name": "app_major_version",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "App minor version"
+                            },
+                            "name": "app_minor_version",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "App revision"
+                            },
+                            "name": "app_revision",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Loramac major version"
+                            },
+                            "name": "loramac_major_version",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Loramac minor version"
+                            },
+                            "name": "loramac_minor_version",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Loramac revision"
+                            },
+                            "name": "loramac_revision",
+                            "schema": "double"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Region"
+                            },
+                            "name": "region",
+                            "schema": "double"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Averaging mode"
+                },
+                "name": "averaging_mode",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Number of devices"
+                },
+                "name": "number_of_devices",
+                "schema": "double"
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Whitelist 0"
+                },
+                "name": "whitelist0",
+                "schema": {
+                    "@type": "Object",
+                    "displayName": {
+                        "en": "Object"
+                    },
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Oui"
+                            },
+                            "name": "oui",
+                            "schema": "string"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Lap start"
+                            },
+                            "name": "lap_start",
+                            "schema": "string"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Lap end"
+                            },
+                            "name": "lap_end",
+                            "schema": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Whitelist1"
+                },
+                "name": "whitelist1",
+                "schema": {
+                    "@type": "Object",
+                    "displayName": {
+                        "en": "Object"
+                    },
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Oui"
+                            },
+                            "name": "oui",
+                            "schema": "string"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Lap start"
+                            },
+                            "name": "lap_start",
+                            "schema": "string"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Lap end"
+                            },
+                            "name": "lap_end",
+                            "schema": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Whitelist2"
+                },
+                "name": "whitelist2",
+                "schema": {
+                    "@type": "Object",
+                    "displayName": {
+                        "en": "Object"
+                    },
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Oui"
+                            },
+                            "name": "oui",
+                            "schema": "string"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Lap start"
+                            },
+                            "name": "lap_start",
+                            "schema": "string"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Lap end"
+                            },
+                            "name": "lap_end",
+                            "schema": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "Whitelist3"
+                },
+                "name": "whitelist3",
+                "schema": {
+                    "@type": "Object",
+                    "displayName": {
+                        "en": "Object"
+                    },
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Oui"
+                            },
+                            "name": "oui",
+                            "schema": "string"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Lap start"
+                            },
+                            "name": "lap_start",
+                            "schema": "string"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Lap end"
+                            },
+                            "name": "lap_end",
+                            "schema": "string"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Telemetry",
+                "displayName": {
+                    "en": "BLE devices"
+                },
+                "name": "ble_devices",
+                "schema": "string"
+            }
+        ],
+        "displayName": {
+            "en": "Enterprise Asset Tracker Sensor"
+        },
+        "@context": [
+            "dtmi:iotcentral:context;2",
+            "dtmi:dtdl:context;2"
+        ]
+    }
+]
