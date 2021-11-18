@@ -1,0 +1,892 @@
+[
+    {
+      "@id": "dtmi:tektelic:agricultural_surface_mount_sensor;1",
+      "@type": "Interface",
+      "contents": [
+        {
+          "@id": "dtmi:tektelic:agricultural_surface_mount_sensor:SendDownlink;1",
+          "@type": "Command",
+          "description": {
+            "en": "Send downlink to the sensor"
+          },
+          "displayName": {
+            "en": "Send Downlink"
+          },
+          "name": "SendDownlink",
+          "request": {
+            "@type": "CommandPayload",
+            "displayName": {
+              "en": "Payload"
+            },
+            "name": "payload",
+            "schema": {
+              "@type": "Object",
+              "displayName": {
+                "en": "Object"
+              },
+              "fields": [
+                {
+                  "displayName": {
+                    "en": "Parameters"
+                  },
+                  "name": "params",
+                  "dtmi:dtdl:property:schema;2": {
+                    "@type": "Object",
+                    "displayName": {
+                      "en": "Object"
+                    },
+                    "fields": [
+                      {
+                        "displayName": {
+                          "en": "Port"
+                        },
+                        "name": "port",
+                        "schema": "integer"
+                      },
+                      {
+                        "displayName": {
+                          "en": "Data in Base64 Format"
+                        },
+                        "name": "data",
+                        "schema": "string"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "durable": true
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Battery life"
+          },
+          "name": "battery_life",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Input1 frequency"
+          },
+          "name": "input1_frequency",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Input2 voltage"
+          },
+          "name": "input2_voltage",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Light intensity"
+          },
+          "name": "light_intensity",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Light detected"
+          },
+          "name": "light_detected",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Acceleration"
+          },
+          "name": "acceleration",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Xaxis"
+                },
+                "name": "xaxis",
+                "schema": "long"
+              },
+              {
+                "displayName": {
+                  "en": "Yaxis"
+                },
+                "name": "yaxis",
+                "schema": "long"
+              },
+              {
+                "displayName": {
+                  "en": "Zaxis"
+                },
+                "name": "zaxis",
+                "schema": "long"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Impact magnitude"
+          },
+          "name": "impact_magnitude",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Impact alarm"
+          },
+          "name": "impact_alarm",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Ambient temperature"
+          },
+          "name": "ambient_temperature",
+          "schema": "long"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Relative humidity"
+          },
+          "name": "relative_humidity",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Mcu temperature"
+          },
+          "name": "mcu_temperature",
+          "schema": "long"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Device eui"
+          },
+          "name": "device_eui",
+          "schema": "string"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "App eui"
+          },
+          "name": "app_eui",
+          "schema": "string"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "App key"
+          },
+          "name": "app_key",
+          "schema": "string"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Device address"
+          },
+          "name": "device_address",
+          "schema": "string"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Network session key"
+          },
+          "name": "network_session_key",
+          "schema": "string"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "App session key"
+          },
+          "name": "app_session_key",
+          "schema": "string"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Loramac join mode"
+          },
+          "name": "loramac_join_mode",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Loramac opts"
+          },
+          "name": "loramac_opts",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Confirm mode"
+                },
+                "name": "confirm_mode",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Sync word"
+                },
+                "name": "sync_word",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Duty cycle"
+                },
+                "name": "duty_cycle",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Adr"
+                },
+                "name": "adr",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Loramac dr tx"
+          },
+          "name": "loramac_dr_tx",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Dr number"
+                },
+                "name": "dr_number",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Tx power number"
+                },
+                "name": "tx_power_number",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Loramac rx2"
+          },
+          "name": "loramac_rx2",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Frequency"
+                },
+                "name": "frequency",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Dr number"
+                },
+                "name": "dr_number",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Seconds per core tick"
+          },
+          "name": "seconds_per_core_tick",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Tick per battery"
+          },
+          "name": "tick_per_battery",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Tick per ambient temperature"
+          },
+          "name": "tick_per_ambient_temperature",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Tick per relative humidity"
+          },
+          "name": "tick_per_relative_humidity",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Tick per light"
+          },
+          "name": "tick_per_light",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Tick per input1"
+          },
+          "name": "tick_per_input1",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Tick per input2"
+          },
+          "name": "tick_per_input2",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Tick per accelerometer"
+          },
+          "name": "tick_per_accelerometer",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Tick per orientation alarm"
+          },
+          "name": "tick_per_orientation_alarm",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Tick per mcu tempearture"
+          },
+          "name": "tick_per_mcu_tempearture",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Temperature relative humidity idle"
+          },
+          "name": "temperature_relative_humidity_idle",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Temperature relative humidity active"
+          },
+          "name": "temperature_relative_humidity_active",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Ambient temperature threshold"
+          },
+          "name": "ambient_temperature_threshold",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "High"
+                },
+                "name": "high",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Low"
+                },
+                "name": "low",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Ambient temperature threshold enabled"
+          },
+          "name": "ambient_temperature_threshold_enabled",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Relative humidity threshold"
+          },
+          "name": "relative_humidity_threshold",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "High"
+                },
+                "name": "high",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Low"
+                },
+                "name": "low",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Relative humidity threshold enabled"
+          },
+          "name": "relative_humidity_threshold_enabled",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Input sample period idle"
+          },
+          "name": "input_sample_period_idle",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Input sample period active"
+          },
+          "name": "input_sample_period_active",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Input1 threshold"
+          },
+          "name": "input1_threshold",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "High"
+                },
+                "name": "high",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Low"
+                },
+                "name": "low",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Input2 threshold"
+          },
+          "name": "input2_threshold",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "High"
+                },
+                "name": "high",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Low"
+                },
+                "name": "low",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Moisture1 threshold"
+          },
+          "name": "moisture1_threshold",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "High"
+                },
+                "name": "high",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Low"
+                },
+                "name": "low",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Moisture2 threshold"
+          },
+          "name": "moisture2_threshold",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "High"
+                },
+                "name": "high",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Low"
+                },
+                "name": "low",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Threshold enabled"
+          },
+          "name": "threshold_enabled",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Input1"
+                },
+                "name": "input1",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Input2"
+                },
+                "name": "input2",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Input5"
+                },
+                "name": "input5",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Input6"
+                },
+                "name": "input6",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Mcu temperature sample period idle"
+          },
+          "name": "mcu_temperature_sample_period_idle",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Mcu temperature sample period active"
+          },
+          "name": "mcu_temperature_sample_period_active",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Mcu temperature threshold"
+          },
+          "name": "mcu_temperature_threshold",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "High"
+                },
+                "name": "high",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Low"
+                },
+                "name": "low",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Mcu temperature threshold enabled"
+          },
+          "name": "mcu_temperature_threshold_enabled",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Interrupt enabled"
+          },
+          "name": "interrupt_enabled",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Upper threshold"
+          },
+          "name": "upper_threshold",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Lower threshold"
+          },
+          "name": "lower_threshold",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Threshold timer"
+          },
+          "name": "threshold_timer",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Light sample period active"
+          },
+          "name": "light_sample_period_active",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Als tx"
+          },
+          "name": "als_tx",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Light alarm reported"
+                },
+                "name": "light_alarm_reported",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Light intensity reported"
+                },
+                "name": "light_intensity_reported",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Orientation alarm threshold"
+          },
+          "name": "orientation_alarm_threshold",
+          "schema": "double"
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Accelerometer tx"
+          },
+          "name": "accelerometer_tx",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Orientation alarm reported"
+                },
+                "name": "orientation_alarm_reported",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Orientation vector reported"
+                },
+                "name": "orientation_vector_reported",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Mode"
+          },
+          "name": "mode",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Orientation alarm enabled"
+                },
+                "name": "orientation_alarm_enabled",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Accelerometer power on"
+                },
+                "name": "accelerometer_power_on",
+                "schema": "double"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Telemetry",
+          "displayName": {
+            "en": "Firmware version"
+          },
+          "name": "firmware_version",
+          "schema": {
+            "@type": "Object",
+            "fields": [
+              {
+                "displayName": {
+                  "en": "App major version"
+                },
+                "name": "app_major_version",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "App minor version"
+                },
+                "name": "app_minor_version",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "App revision"
+                },
+                "name": "app_revision",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Loramac major version"
+                },
+                "name": "loramac_major_version",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Loramac minor version"
+                },
+                "name": "loramac_minor_version",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Loramac revision"
+                },
+                "name": "loramac_revision",
+                "schema": "double"
+              },
+              {
+                "displayName": {
+                  "en": "Region"
+                },
+                "name": "region",
+                "schema": "double"
+              }
+            ]
+          }
+        }
+      ],
+      "displayName": {
+        "en": "Agricultural Surface Mount Sensor"
+      },
+      "@context": [
+        "dtmi:iotcentral:context;2",
+        "dtmi:dtdl:context;2"
+      ]
+    }
+  ]
